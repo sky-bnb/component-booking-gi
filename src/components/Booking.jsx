@@ -5,11 +5,11 @@ class Booking extends React.Component {
     super(props);
     this.state = {
 
-    }
+    };
   }
 
   render() {
-    return <div>Booking</div>
+    return <div>Booking</div>;
   }
 }
 
