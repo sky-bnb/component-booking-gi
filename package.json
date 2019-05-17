@@ -2,10 +2,13 @@
   "name": "component-booking-gi",
   "version": "1.0.0",
   "description": "Airbnb Booking Component",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack -d --watch"
+    "webpack": "webpack -d --watch",
+    "mongo": "mongod --config /usr/local/etc/mongod.conf",
+    "start": "nodemon ./server/index.js",
+    "seed": "node ./database/seedData.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +22,11 @@
   "homepage": "https://github.com/sky-bnb/component-booking-gi#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "mongoose": "^5.5.9",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "faker": "^4.1.0",
+    "moment": "^2.24.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -36,6 +42,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
     "jest": "^24.8.0",
+    "nodemon": "^1.19.0",
     "puppeteer": "^1.16.0",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2"
