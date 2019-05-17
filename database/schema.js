@@ -15,6 +15,6 @@ const BookingSchema = new mongoose.Schema({
   available: [Date]
 });
 
-const BookingModel = mongoose.model('bookingModel', BookingSchema);
+const Booking = mongoose.model('Booking', BookingSchema);
 
-module.exports = { BookingModel };
+module.exports = Booking;
