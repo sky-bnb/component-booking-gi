@@ -13,7 +13,7 @@ server.use(express.static(path.join(__dirname, '../public')));
 server.get('/host', (req, res) => {
   getBooking(req.body._id, (err, collection) => {
     if (err) {
-      console.error(err);
+      res.status(404).end(err);
     } else {
       res.status(200).send(collection);
     }
