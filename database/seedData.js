@@ -13,13 +13,13 @@ db.dropDatabase(() => {
   for (let i = 101; i <= 200; i += 1) {
     const dateSet = new Set();
     const dateArr = [];
-  
+
     for (let j = 0; j < randomNumber(30, 70); j += 1) {
       dateSet.add(moment(faker.date.between(currentDate, threeMonthsAhead)).format('YYYY-MM-DD'));
     }
-  
+
     dateSet.forEach(element => dateArr.push(element));
-  
+
     const newBooking = new Booking({
       _id: i,
       ownerName: faker.name.firstName(),
@@ -34,10 +34,10 @@ db.dropDatabase(() => {
       maxStay: randomNumber(14, 30),
       available: dateArr.sort(),
     });
-  
+
     bookingPromiseArr.push(newBooking.save());
   }
-  
+
   Promise.all(bookingPromiseArr)
     .then(() => {
       console.log('Booking data successfully seeded.');
