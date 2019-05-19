@@ -4,7 +4,8 @@
   "description": "Airbnb Booking Component",
   "main": "index.jsx",
   "jest": {
-    "setupFilesAfterEnv": ["<rootDir>tests/setupTests.js"]
+    "setupFilesAfterEnv": ["<rootDir>tests/setupTests.js"],
+    "testEnvironment": "node"
   },
   "scripts": {
     "test": "jest",

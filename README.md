@@ -18,7 +18,8 @@
 
 ## Usage
 
-> Some usage instructions
+npm test
+> run tests on Jest. use --watch flag if desired
 
 ## Requirements
 
