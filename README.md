@@ -18,7 +18,14 @@
 
 ## Usage
 
-> Some usage instructions
+npm install
+>installs required dependencies
+npm start
+> starts express server
+npm run mongo
+> starts mongo DB (if mongo config file is in default location)
+npm run seed
+> seeds database
 
 ## Requirements
 
