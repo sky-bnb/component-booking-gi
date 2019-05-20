@@ -1,13 +1,7 @@
-const mongoose = require('mongoose');
 const faker = require('faker');
 const moment = require('moment');
-const { db, mongoDbName } = require('./index.js');
+const { db } = require('./index.js');
 const Booking = require('./schema.js');
-
-
-mongoose.connect(mongoDbName, { useNewUrlParser: true });
-db.on('error', console.error.bind(console, 'connection error: '));
-db.once('open', () => console.log('Connected to MongoDB Skybnb Booking'));
 
 const randomNumber = (min, max) => Math.floor(Math.random() * (max + 1 - min) + min);
 const currentDate = moment().format('YYYY-MM-DD');
@@ -19,7 +13,7 @@ db.dropDatabase(() => {
   for (let i = 101; i <= 200; i += 1) {
     const dateSet = new Set();
     const dateArr = [];
-  
+
     for (let j = 0; j < randomNumber(30, 70); j += 1) {
       dateSet.add(moment(faker.date.between(currentDate, threeMonthsAhead)).format('YYYY-MM-DD'));
     }
@@ -40,7 +34,7 @@ db.dropDatabase(() => {
       maxStay: randomNumber(14, 30),
       available: dateArr.sort(),
     });
-  
+
     bookingPromiseArr.push(newBooking.save());
   }
 
