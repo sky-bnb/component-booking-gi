@@ -9,7 +9,7 @@ class Booking extends React.Component {
   }
 
   render() {
-    return <div>Booking</div>;
+    return <div className="booking">Booking</div>;
   }
 }
 
