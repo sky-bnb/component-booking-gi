@@ -4,14 +4,16 @@
   "description": "Airbnb Booking Component",
   "main": "index.jsx",
   "jest": {
-    "setupFilesAfterEnv": ["<rootDir>tests/setupTests.js"],
+    "setupFilesAfterEnv": [
+      "<rootDir>tests/setupTests.js"
+    ],
     "testEnvironment": "node"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --watch",
     "webpack": "webpack -d --watch",
     "mongo": "mongod --config /usr/local/etc/mongod.conf",
-    "start": "nodemon ./server/index.js",
+    "start": "nodemon ./server/server.js",
     "seed": "node ./database/seedData.js"
   },
   "repository": {
@@ -50,6 +52,7 @@
     "jest": "^24.8.0",
     "nodemon": "^1.19.0",
     "puppeteer": "^1.16.0",
+    "supertest": "^4.0.2",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2"
   }

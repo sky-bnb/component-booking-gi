@@ -1,17 +1,15 @@
 const express = require('express');
-const path = require('path');
 const { getBooking } = require('../database/index.js');
 
-const server = express();
-const port = 3004;
+const app = express();
 
-server.use(express.urlencoded({ extended: true }));
-server.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-server.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(`${__dirname}/../public`));
 
-server.get('/host', (req, res) => {
-  getBooking(req.body._id, (err, collection) => {
+app.get('/host/:hostid', (req, res) => {
+  getBooking(req.params.hostid, (err, collection) => {
     if (err) {
       res.status(404).end(err);
     } else {
@@ -20,4 +18,4 @@ server.get('/host', (req, res) => {
   });
 });
 
-server.listen(port, () => console.log(`Booking Express Server listening on port ${port}`));
+module.exports = app;
