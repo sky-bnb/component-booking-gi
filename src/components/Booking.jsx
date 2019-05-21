@@ -17,7 +17,7 @@ class Booking extends React.Component {
   }
 
   render() {
-    return <div className="booking" style={{ padding: "24px", maxWidth: "328px", maxHeight: "462px", minWidth: "328px", minHeight: "462px", margin: "0px" }}>
+    return <div className="booking" style={{ padding: "24px", maxWidth: "328px", maxHeight: "462px", minWidth: "328px", minHeight: "462px", margin: "0px", fontFamily: "sans-serif"}}>
       <CloseButton />
       <Price />
       <Reviews />
