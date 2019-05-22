@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledWrapper = styled.span`
-
+const StyledWrapper = styled.div`
 `;
 
-const StyledAvgRating = styled.span`
+const StyledAvgRating = styled.div`
   width: 120px;
   background-repeat: space no-repeat;
   display: block;
@@ -20,10 +19,10 @@ const StyledNumReviews = styled.div`
 `;
 
 const Reviews = () => (
-  <div className="reviews">
+  <StyledReviewsWWrapper>
     <StyledAvgRating></StyledAvgRating>
     <StyledNumReviews>531</StyledNumReviews>
-  </div>
+  </StyledReviewsWWrapper>
 );
 
 export default Reviews;

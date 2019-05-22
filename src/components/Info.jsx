@@ -14,11 +14,18 @@ const StyledLightbulb = styled.img`
   float: right;
 `;
 
+const StyledHomeMinds = styled.div`
+  font-weight: bold;
+`;
+
+const StyledHomeViewedText = styled.div`
+`;
+
 const Info = (props) => (
   <StyledInfo>
     <StyledHomeAndViews>
-      <div className="text"><b>This home is on people's minds.</b></div>
-      <div className="text">This home has been viewed {props.numViews} times in the past week.</div>
+      <StyledHomeMinds>This home is on people's minds.</StyledHomeMinds>
+      <StyledHomeViewedText>This home has been viewed {props.numViews} times in the past week.</StyledHomeViewedText>
     </StyledHomeAndViews>
     <StyledLightbulb src="lightbulb.gif" alt="lightbulb animation" />
   </StyledInfo>
