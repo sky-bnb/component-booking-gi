@@ -1,10 +1,17 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledGuests = styled.div`
+`;
+
+const StyledGuestsText = styled.div`
+`;
 
 const Guests = () => (
-  <div className="guests">
-    <div className="text">Guests</div>
+  <StyledGuests>
+    <StyledGuestsText>Guests</StyledGuestsText>
     <div className="guestdropdown"></div>
-  </div>
+  </StyledGuests>
 );
 
 export default Guests;

@@ -1,9 +1,21 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledPriceAmt = styled.div`
+  
+`;
+
+const StyledPricePerNight = styled.div`
+  font-size: 12px;
+  line-height: 1.33333em;
+  color: rgb(72, 72, 72);
+  margin: 0px;
+`;
 
 const Price = () => (
   <div className="price">
-    <div className="priceAmt"><b>$100</b></div>
-    <div className="perNight" styles={{ fontSize: "12px", lineHeight: "1.33333em", color: "rgb(72, 72, 72)", margin: "0px" }}>per night</div>
+    <StyledPriceAmt>$100</StyledPriceAmt>
+    <StyledPricePerNight>per night</StyledPricePerNight>
   </div>
 );
 

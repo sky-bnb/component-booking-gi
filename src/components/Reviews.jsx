@@ -1,9 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledAvgRating = styled.div`
+  display: inline;
+`;
+
+const StyledNumReviews = styled.div`
+  display: inline;
+`;
 
 const Reviews = () => (
   <div className="reviews">
-    <div className="avgRating" style={{ display: "inline" }}>STARS ***** </div>
-    <div className="numReviews" style={{ display: "inline" }}>531</div>
+    <StyledAvgRating>STARS *****</StyledAvgRating>
+    <StyledNumReviews>531</StyledNumReviews>
   </div>
 );
 

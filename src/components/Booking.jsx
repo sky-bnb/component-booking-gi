@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import CloseButton from './CloseButton.jsx';
 import Price from './Price.jsx';
 import Reviews from './Reviews.jsx';
-import Break from './Break.jsx'
 import Dates from './Dates.jsx';
 import Guests from './Guests.jsx';
 import Book from './Book.jsx';
@@ -15,6 +14,14 @@ const StyledBooking = styled.div`
   height: 462px;
   margin: 0px;
   fontFamily: sans-serif;
+`;
+
+const StyledBreak = styled.div`
+  width: 328px;
+  height: 0px;
+  border: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #EBEBEB;
 `;
 
 class Booking extends React.Component {
@@ -30,16 +37,15 @@ class Booking extends React.Component {
       <CloseButton />
       <Price />
       <Reviews />
-      <Break />
+      <StyledBreak />
       <Dates />
       <Guests />
       <Book />
-      <Break />
+      <StyledBreak />
       <Info numViews={this.state.numViews}/>
     </StyledBooking>;
   }
 }
 
-{/* <div className="text">Report this listing</div> */}
 
 export default Booking;

@@ -1,13 +1,27 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledInfo = styled.div`
+  width: 326px;
+  height: 60px;
+`;
+
+const StyledHomeAndViews = styled.div`
+  float: left;
+`;
+
+const StyledLightbulb = styled.img`
+  float: right;
+`;
 
 const Info = (props) => (
-  <div className="info" style={{ width: "326px", height: "60px"}}>
-    <div className="floatLeft" style={{ float: "left" }}>
+  <StyledInfo>
+    <StyledHomeAndViews>
       <div className="text"><b>This home is on people's minds.</b></div>
       <div className="text">This home has been viewed {props.numViews} times in the past week.</div>
-    </div>
-    <img src="lightbulb.gif" alt="lightbulb animation" style={{ float: "right" }} />
-  </div>
+    </StyledHomeAndViews>
+    <StyledLightbulb src="lightbulb.gif" alt="lightbulb animation" />
+  </StyledInfo>
 );
 
 export default Info;
