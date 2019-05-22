@@ -8,7 +8,7 @@ const StyledGuests = styled.div`
 const StyledGuestsText = styled.div`
   margin: 0px;
   word-wrap: break-word;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 12px;
   font-weight: 600;
   line-height: 1.3333333333333333em;

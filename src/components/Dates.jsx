@@ -14,7 +14,7 @@ const StyledSVG = styled.svg`
 
 const StyledDateText = styled.div`
   overflow-wrap: break-word;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 12px;
   font-weight: 600;
   line-height: 1.33333em;

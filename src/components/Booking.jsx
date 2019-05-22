@@ -13,7 +13,7 @@ const StyledBooking = styled.div`
   width: 328px;
   height: 462px;
   margin: 0px;
-  fontFamily: sans-serif;
+  font-family: 'Quicksand', sans-serif;
 `;
 
 // StyledBooking.displayName = 'StyledBooking';
@@ -24,6 +24,8 @@ const StyledBreak = styled.div`
   border: 1px;
   border-bottom-style: solid;
   border-bottom-color: #EBEBEB;
+  margin-top: 16px;
+  margin-bottom: 16px;
 `;
 
 class Booking extends React.Component {
