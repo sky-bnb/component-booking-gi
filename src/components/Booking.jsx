@@ -16,6 +16,8 @@ const StyledBooking = styled.div`
   fontFamily: sans-serif;
 `;
 
+// StyledBooking.displayName = 'StyledBooking';
+
 const StyledBreak = styled.div`
   width: 328px;
   height: 0px;
@@ -46,6 +48,5 @@ class Booking extends React.Component {
     </StyledBooking>;
   }
 }
-
 
 export default Booking;

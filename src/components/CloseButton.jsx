@@ -2,16 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledCloseButton = styled.button`
-  padding: 20px;
-  margin: -20px;
+  padding: 8px;
+  margin: -8px;
   background: transparent;
-  outline: transparent;
+  outline: 0px;
   border-width: 1px;
   border-style: initial;
-  border-radius: 50%;
+  border-radius: 100%;
   
   :active {
-    box-shadow: 0 0 5px #484848;
+    box-shadow: rgb(216, 216, 216) 0 0 4px 2px;
   };
 `;
 
