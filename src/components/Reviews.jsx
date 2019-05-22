@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledWrapper = styled.div`
+const StyledReviewsWrapper = styled.div`
 `;
 
 const StyledAvgRating = styled.div`
@@ -19,10 +19,10 @@ const StyledNumReviews = styled.div`
 `;
 
 const Reviews = () => (
-  <StyledReviewsWWrapper>
+  <StyledReviewsWrapper>
     <StyledAvgRating></StyledAvgRating>
     <StyledNumReviews>531</StyledNumReviews>
-  </StyledReviewsWWrapper>
+  </StyledReviewsWrapper>
 );
 
 export default Reviews;
