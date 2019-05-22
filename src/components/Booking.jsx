@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import CloseButton from './CloseButton.jsx';
 import Price from './Price.jsx';
 import Reviews from './Reviews.jsx';
@@ -7,6 +8,14 @@ import Dates from './Dates.jsx';
 import Guests from './Guests.jsx';
 import Book from './Book.jsx';
 import Info from './Info.jsx';
+
+const StyledBooking = styled.div`
+  padding: 24px;
+  width: 328px;
+  height: 462px;
+  margin: 0px;
+  fontFamily: sans-serif;
+`;
 
 class Booking extends React.Component {
   constructor(props) {
@@ -17,7 +26,7 @@ class Booking extends React.Component {
   }
 
   render() {
-    return <div className="booking" style={{ padding: "24px", maxWidth: "328px", maxHeight: "462px", minWidth: "328px", minHeight: "462px", margin: "0px", fontFamily: "sans-serif"}}>
+    return <StyledBooking>
       <CloseButton />
       <Price />
       <Reviews />
@@ -27,7 +36,7 @@ class Booking extends React.Component {
       <Book />
       <Break />
       <Info numViews={this.state.numViews}/>
-    </div>;
+    </StyledBooking>;
   }
 }
 
