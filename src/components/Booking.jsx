@@ -30,7 +30,8 @@ class Booking extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      numViews: 0
+      numViews: 0,
+      numReviews: 213,
     };
   }
 
@@ -38,7 +39,7 @@ class Booking extends React.Component {
     return <StyledBooking>
       <CloseButton />
       <Price />
-      <Reviews />
+      <Reviews numReviews={this.state.numReviews} />
       <StyledBreak />
       <Dates />
       <Guests />

@@ -48,7 +48,7 @@ const Reviews = (props) => (
   <StyledReviewsWrapper>
     <StyledReviewsButton>
       <StyledAvgRatingBackground><StyledAvgRatingForeground></StyledAvgRatingForeground></StyledAvgRatingBackground>
-      <StyledNumReviews>{props.numReviews}110</StyledNumReviews>
+      <StyledNumReviews>{props.numReviews}</StyledNumReviews>
     </StyledReviewsButton>
   </StyledReviewsWrapper>
 );
