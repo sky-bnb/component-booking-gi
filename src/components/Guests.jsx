@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import GuestsButton from './GuestsButton.jsx';
 
 const StyledGuests = styled.div`
+  margin-bottom: 16px;
 `;
 
-const StyledGuestsText = styled.div`
+const StyledGuestsLabel = styled.label`
   margin: 0px;
   word-wrap: break-word;
   font-family: 'Quicksand', sans-serif;
@@ -15,10 +16,15 @@ const StyledGuestsText = styled.div`
   color: #484848;
 `;
 
-const Guests = () => (
+const StyledGuestDropdown = styled.div`
+  
+`;
+
+const Guests = (props) => (
   <StyledGuests>
-    <StyledGuestsText>Guests</StyledGuestsText>
-    <GuestsButton />
+    <StyledGuestsLabel>Guests</StyledGuestsLabel>
+    <GuestsButton isOpen={props.isOpen} toggle={props.toggle} />
+    {props.isOpen ? <StyledGuestDropdown /> : null}
   </StyledGuests>
 );
 

@@ -7,6 +7,7 @@ import Dates from './Dates.jsx';
 import Guests from './Guests.jsx';
 import Book from './Book.jsx';
 import Info from './Info.jsx';
+import Report from './Report.jsx';
 
 const StyledBooking = styled.div`
   padding: 24px;
@@ -24,16 +25,25 @@ const StyledBreak = styled.div`
   border: 1px;
   border-bottom-style: solid;
   border-bottom-color: #EBEBEB;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 `;
 
 class Booking extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      numViews: 0
+      numViews: 0,
+      isDatesOpen: false,
+      isGuestsOpen: false,
+      numAdults: 0,
+      numChildren: 0,
+      numInfants: 0
     };
+  }
+
+  toggleGuestsDropdown() {
+    this.setState({ isGuestsOpen: !this.state.isGuestsOpen });
   }
 
   render() {
@@ -43,10 +53,11 @@ class Booking extends React.Component {
       <Reviews />
       <StyledBreak />
       <Dates />
-      <Guests />
+      <Guests isOpen={this.state.isGuestsOpen} toggle={this.toggleGuestsDropdown.bind(this)} />
       <Book />
       <StyledBreak />
       <Info numViews={this.state.numViews}/>
+      <Report />      
     </StyledBooking>;
   }
 }

@@ -50,8 +50,9 @@ const StyledButtonText = styled.div`
 const StyledChargeText = styled.div`
   margin-top: 8px;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-  font-size: 14px;
-  line-height: 1.43;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.33333em;
   color: #484848;
   text-align: center;
   -webkit-font-smoothing: antialiased;
@@ -59,7 +60,9 @@ const StyledChargeText = styled.div`
 
 const Book = (props) => (
   <StyledBookForm>
-    <StyledBookButton><StyledButtonText>Book</StyledButtonText></StyledBookButton>
+    <StyledBookButton>
+      <StyledButtonText>Book</StyledButtonText>
+    </StyledBookButton>
     <StyledChargeText>You won't be charged yet</StyledChargeText>
   </StyledBookForm>
 );
