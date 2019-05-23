@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import GuestsButton from './GuestsButton.jsx';
+import GuestsDropdown from './GuestsDropdown.jsx';
 
 const StyledGuests = styled.div`
   margin-bottom: 16px;
@@ -16,15 +17,11 @@ const StyledGuestsLabel = styled.label`
   color: #484848;
 `;
 
-const StyledGuestDropdown = styled.div`
-  
-`;
-
 const Guests = (props) => (
   <StyledGuests>
     <StyledGuestsLabel>Guests</StyledGuestsLabel>
     <GuestsButton isOpen={props.isOpen} toggle={props.toggle} />
-    {props.isOpen ? <StyledGuestDropdown /> : null}
+    {props.isOpen ? <GuestsDropdown /> : null}
   </StyledGuests>
 );
 
