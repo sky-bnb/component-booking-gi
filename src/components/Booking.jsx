@@ -34,11 +34,16 @@ class Booking extends React.Component {
     super(props);
     this.state = {
       numViews: 0,
+<<<<<<< HEAD
       isDatesOpen: false,
       isGuestsOpen: false,
       numAdults: 0,
       numChildren: 0,
       numInfants: 0,
+=======
+      numReviews: 213,
+      rating: 4.33,
+>>>>>>> master
     };
   }
 
@@ -74,7 +79,7 @@ class Booking extends React.Component {
     return <StyledBooking>
       <CloseButton />
       <Price />
-      <Reviews />
+      <Reviews numReviews={this.state.numReviews} rating={this.state.rating} />
       <StyledBreak />
       <Dates />
       <Guests isOpen={this.state.isGuestsOpen} toggle={this.toggleGuestsDropdown.bind(this)} numAdults={this.state.numAdults} numChildren={this.state.numChildren} numInfants={this.state.numInfants} updateNumAdults={this.updateNumAdults.bind(this)} updateNumChildren={this.updateNumChildren.bind(this)} updateNumInfants={this.updateNumInfants.bind(this)}/>
