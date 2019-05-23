@@ -134,11 +134,11 @@ const GuestsDropdown = (props) => (
       <StyledAdultRow>
         <StyledMenuText>Adults</StyledMenuText>
         <StyledMinusCounterPlusWrapper>
-          <StyledButton>
+          <StyledButton onClick={() => props.updateNumAdults(-1)}>
             <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" /></StyledSVG>
           </StyledButton>
-          <StyledCounterText>{props.numAdults}1</StyledCounterText>
-          <StyledButton>
+          <StyledCounterText>{props.numAdults}</StyledCounterText>
+          <StyledButton onClick={() => props.updateNumAdults(1)}>
              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" />
             <rect height="12" rx="1" width="2" x="11" y="6" /></StyledSVG>
           </StyledButton>
@@ -150,11 +150,11 @@ const GuestsDropdown = (props) => (
           <StyledSubMenuText>Ages 2-12</StyledSubMenuText>
         </StyledTextWrapper>
         <StyledMinusCounterPlusWrapper>
-          <StyledButton>
+          <StyledButton onClick={() => props.updateNumChildren(-1)}>
               <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" /></StyledSVG>
             </StyledButton>
-            <StyledCounterText>{props.numChildren}0</StyledCounterText>
-            <StyledButton>
+            <StyledCounterText>{props.numChildren}</StyledCounterText>
+            <StyledButton onClick={() => props.updateNumChildren(1)}>
               <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" />
               <rect height="12" rx="1" width="2" x="11" y="6" /></StyledSVG>
           </StyledButton>
@@ -166,11 +166,11 @@ const GuestsDropdown = (props) => (
           <StyledSubMenuText>Under 2</StyledSubMenuText>
         </StyledTextWrapper>
         <StyledMinusCounterPlusWrapper>
-          <StyledButton>
+          <StyledButton onClick={() => props.updateNumInfants(-1)}>
               <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" /></StyledSVG>
             </StyledButton>
-            <StyledCounterText>{props.numInfants}0</StyledCounterText>
-            <StyledButton>
+            <StyledCounterText>{props.numInfants}</StyledCounterText>
+            <StyledButton onClick={() => props.updateNumInfants(1)}>
               <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" />
               <rect height="12" rx="1" width="2" x="11" y="6" /></StyledSVG>
           </StyledButton>

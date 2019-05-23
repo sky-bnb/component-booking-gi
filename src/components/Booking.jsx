@@ -54,6 +54,22 @@ class Booking extends React.Component {
     });
   }
 
+  updateNumChildren(value) {
+    this.setState(prev => {
+      return {
+        numChildren: prev.numChildren += value
+      };
+    });
+  }
+
+  updateNumInfants(value) {
+    this.setState(prev => {
+      return {
+        numInfants: prev.numInfants += value
+      };
+    });
+  }
+
   render() {
     return <StyledBooking>
       <CloseButton />
@@ -61,7 +77,7 @@ class Booking extends React.Component {
       <Reviews />
       <StyledBreak />
       <Dates />
-      <Guests isOpen={this.state.isGuestsOpen} toggle={this.toggleGuestsDropdown.bind(this)} numAdults={this.state.numAdults} numChildren={this.state.numChildren} numInfants={this.state.numInfants} updateNumAdults={this.updateNumAdults.bind(this)}/>
+      <Guests isOpen={this.state.isGuestsOpen} toggle={this.toggleGuestsDropdown.bind(this)} numAdults={this.state.numAdults} numChildren={this.state.numChildren} numInfants={this.state.numInfants} updateNumAdults={this.updateNumAdults.bind(this)} updateNumChildren={this.updateNumChildren.bind(this)} updateNumInfants={this.updateNumInfants.bind(this)}/>
       <Book />
       <StyledBreak />
       <Info numViews={this.state.numViews}/>
