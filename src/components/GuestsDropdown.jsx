@@ -52,6 +52,7 @@ const StyledSubMenuText = styled.div`
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
+  padding: 4px 0px 0px 0px;
 `;
 
 const StyledTextWrapper = styled.div`
@@ -59,6 +60,10 @@ const StyledTextWrapper = styled.div`
 
 const StyledGuestMaxText = styled.div`
   margin: 0px 0px 16px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #484848;
 `;
 
 const StyledMinusCounterPlusWrapper = styled.div`
@@ -69,23 +74,47 @@ const StyledMinusCounterPlusWrapper = styled.div`
 `;
 
 const StyledButton = styled.button`
-  background: transparent;
+  border-style: initial;
+  border-style: solid;
   border-color: rgb(0, 132, 137);
-  border-radius: 50%;
+  border-radius: 100%;
   border-width: 1px;
-  padding: 1px 7px 2px 7px;
+  color: rgb(0, 132, 137);
   cursor: pointer;
+  outline: 0px;
   height: 32px;
   width: 32px;
+  cursor: pointer;
+
+  display: block;
+  
+  :active {
+    box-shadow: rgb(0, 132, 137) 0 0 2px 2px;
+  };
 `;
+
+// border-left-color: rgba(0, 132, 137, 0.3)
 
 const StyledSVG = styled.svg`
   height: 1.5em;
   width: 1.5em;
-  fill: rgb(0, 132, 137);
+  fill: currentColor;
+  margin: auto;
+  display: block;
 `
 
 const StyledCloseButton = styled.button`
+  color: #008489;
+  font-family: 'Quicksand', sans-serif;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  font-size: 16px;
+  float: right;
+  :hover {
+    text-decoration: underline;
+  }
 `;
 
 const StyledCounterText = styled.div`
@@ -105,11 +134,11 @@ const GuestsDropdown = (props) => (
         <StyledMenuText>Adults</StyledMenuText>
         <StyledMinusCounterPlusWrapper>
           <StyledButton>
-            <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11"></rect></StyledSVG>
+            <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" /></StyledSVG>
           </StyledButton>
           <StyledCounterText>{props.numAdults}1</StyledCounterText>
           <StyledButton>
-             <StyledSVG viewBox="0 0 24 24" role="img" focusable="false" ><rect height="2" rx="1" width="12" x="6" y="11" />
+             <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" />
             <rect height="12" rx="1" width="2" x="11" y="6" /></StyledSVG>
           </StyledButton>
         </StyledMinusCounterPlusWrapper>
@@ -121,11 +150,11 @@ const GuestsDropdown = (props) => (
         </StyledTextWrapper>
         <StyledMinusCounterPlusWrapper>
           <StyledButton>
-              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11"></rect></StyledSVG>
+              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" /></StyledSVG>
             </StyledButton>
             <StyledCounterText>{props.numChildren}0</StyledCounterText>
             <StyledButton>
-              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false" ><rect height="2" rx="1" width="12" x="6" y="11" />
+              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" />
               <rect height="12" rx="1" width="2" x="11" y="6" /></StyledSVG>
           </StyledButton>
         </StyledMinusCounterPlusWrapper>
@@ -137,11 +166,11 @@ const GuestsDropdown = (props) => (
         </StyledTextWrapper>
         <StyledMinusCounterPlusWrapper>
           <StyledButton>
-              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11"></rect></StyledSVG>
+              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" /></StyledSVG>
             </StyledButton>
             <StyledCounterText>{props.numInfants}0</StyledCounterText>
             <StyledButton>
-              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false" ><rect height="2" rx="1" width="12" x="6" y="11" />
+              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" />
               <rect height="12" rx="1" width="2" x="11" y="6" /></StyledSVG>
           </StyledButton>
         </StyledMinusCounterPlusWrapper>

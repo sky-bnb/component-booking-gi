@@ -38,7 +38,7 @@ class Booking extends React.Component {
       isGuestsOpen: false,
       numAdults: 0,
       numChildren: 0,
-      numInfants: 0
+      numInfants: 0,
     };
   }
 
