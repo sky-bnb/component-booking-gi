@@ -32,6 +32,7 @@ class Booking extends React.Component {
     this.state = {
       numViews: 0,
       numReviews: 213,
+      rating: 4.33,
     };
   }
 
@@ -39,7 +40,7 @@ class Booking extends React.Component {
     return <StyledBooking>
       <CloseButton />
       <Price />
-      <Reviews numReviews={this.state.numReviews} />
+      <Reviews numReviews={this.state.numReviews} rating={this.state.rating} />
       <StyledBreak />
       <Dates />
       <Guests />
