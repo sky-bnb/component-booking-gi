@@ -10,17 +10,13 @@ const StyledGuestsButton = styled.button`
   align-items: center;
   width: 100%;
   background: rgb(255, 255, 255);
-  border-bottom-color: ${props => props.isOpen ? 'rgb(0, 132, 137)' : 'rgb(186, 186, 186)'};
+  border-color: rgb(235, 235, 235);
+  border-bottom-color: ${props => props.isOpen ? 'rgb(0, 132, 137)' : 'rgb(235, 235, 235)'};
   border-bottom-style: solid;
-  border-bottom-width: 2px;
+  border-width: ${props => props.isOpen ? '1px 1px 2px 1px' : '1px'};
   border-radius: 2px;
   padding: 8px;
-  border-width: 1px;
   border-style: solid;
-  border-color: rgb(235, 235, 235);
-  border-image: initial;
-  box-sizing: border-box;
-  outline-color: rgb(153, 153, 153);
 `;
 
 const StyledNumGuestsLabel = styled.label`
