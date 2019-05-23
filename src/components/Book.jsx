@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledBook = styled.div`
+const StyledBookForm = styled.form`
 `;
 
 const StyledBookButton = styled.button`
@@ -21,7 +21,6 @@ const StyledBookButton = styled.button`
   border-style: solid;
   background: rgb(255, 90, 95);
   border-color: transparent;
-  -webkit-appearance: button;
   align-items: flex-start;
   box-sizing: border-box;
   border-image: initial;
@@ -30,9 +29,12 @@ const StyledBookButton = styled.button`
   text-indent: 0px;
   text-shadow: none;
   font: 400 11px system-ui;
-  -webkit-writing-mode: horizontal-tb;
   margin: 0;
-  -webkit-font-smoothing: antialiased;
+  padding: 10px 22px 10px 22px;
+
+  :focus {
+    outline: -webkit-focus-ring-color auto 5px;
+  };
 `;
 
 const StyledButtonText = styled.div`
@@ -48,18 +50,21 @@ const StyledButtonText = styled.div`
 const StyledChargeText = styled.div`
   margin-top: 8px;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-  font-size: 14px;
-  line-height: 1.43;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.33333em;
   color: #484848;
   text-align: center;
   -webkit-font-smoothing: antialiased;
 `;
 
 const Book = (props) => (
-  <StyledBook>
-    <StyledBookButton><StyledButtonText>Book</StyledButtonText></StyledBookButton>
+  <StyledBookForm>
+    <StyledBookButton>
+      <StyledButtonText>Book</StyledButtonText>
+    </StyledBookButton>
     <StyledChargeText>You won't be charged yet</StyledChargeText>
-  </StyledBook>
+  </StyledBookForm>
 );
 
 export default Book;
