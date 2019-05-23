@@ -112,6 +112,7 @@ const StyledCloseButton = styled.button`
   border: 0px;
   font-size: 16px;
   float: right;
+  outline: 0px;
   :hover {
     text-decoration: underline;
   }
@@ -177,7 +178,7 @@ const GuestsDropdown = (props) => (
       </StyledInfantRow>
       <StyledClosingWrapper>
         <StyledGuestMaxText>2 guests maximum. Infants don't count toward the number of guests.</StyledGuestMaxText>
-        <StyledCloseButton>Close</StyledCloseButton>
+        <StyledCloseButton onClick={props.toggle}>Close</StyledCloseButton>
       </StyledClosingWrapper>
     </StyledGuestsMenuWrapper>
   </StyledGuestsDropdown>
