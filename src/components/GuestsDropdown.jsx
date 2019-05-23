@@ -55,8 +55,6 @@ const StyledSubMenuText = styled.div`
 `;
 
 const StyledTextWrapper = styled.div`
-  display: flex;
-  align-items: center;
 `;
 
 const StyledGuestMaxText = styled.div`
