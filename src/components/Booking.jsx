@@ -33,17 +33,14 @@ class Booking extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      numReviews: 102,
       numViews: 0,
-<<<<<<< HEAD
+      rating: 4.3,
       isDatesOpen: false,
       isGuestsOpen: false,
       numAdults: 0,
       numChildren: 0,
       numInfants: 0,
-=======
-      numReviews: 213,
-      rating: 4.33,
->>>>>>> master
     };
   }
 

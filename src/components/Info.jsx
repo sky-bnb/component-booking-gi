@@ -37,19 +37,11 @@ const StyledHomeMinds = styled.div`
   font-weight: bold;
 `;
 
-const StyledHomeViewedText = styled.div`
-`;
-
 const Info = (props) => (
   <StyledInfo>
     <StyledHomeAndViews>
-<<<<<<< HEAD
       <StyledHomeMindsText>This home is on people's minds.</StyledHomeMindsText>
       <StyledHomeViewedText>It's been viewed {props.numViews}+ times in the past week.</StyledHomeViewedText>
-=======
-      <StyledHomeMinds>This home is on people's minds.</StyledHomeMinds>
-      <StyledHomeViewedText>This home has been viewed {props.numViews} times in the past week.</StyledHomeViewedText>
->>>>>>> master
     </StyledHomeAndViews>
     <StyledLightbulb src="lightbulb.gif" alt="lightbulb animation" />
   </StyledInfo>
