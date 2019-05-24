@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Calendar from './Calendar.jsx';
 
 const StyledDatesDropdown = styled.div`
   width: 332px;
@@ -13,7 +14,9 @@ const StyledDatesDropdown = styled.div`
 `;
 
 const DatesDropdown = (props) => (
-  <StyledDatesDropdown>DATES DROPDOWN</StyledDatesDropdown>
+  <StyledDatesDropdown>
+    <Calendar />
+  </StyledDatesDropdown>
 );
 
 export default DatesDropdown;
