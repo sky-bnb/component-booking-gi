@@ -37,7 +37,7 @@ class Booking extends React.Component {
       numReviews: 102,
       numViews: 0,
       rating: 4.3,
-      isCheckinOpen: false,
+      isCheckinOpen: true,
       isCheckoutOpen: false,
       isGuestsOpen: false,
       numAdults: 0,
@@ -71,7 +71,7 @@ class Booking extends React.Component {
 
   render() {
     const {
-      numReviews, rating, isCheckinOpen, isGuestsOpen, numAdults, numChildren, numInfants, numViews,
+      numReviews, rating, isCheckinOpen, isCheckoutOpen, isGuestsOpen, numAdults, numChildren, numInfants, numViews,
     } = this.state;
 
     return (
@@ -80,7 +80,7 @@ class Booking extends React.Component {
         <Price />
         <Reviews numReviews={numReviews} rating={rating} />
         <StyledBreak />
-        <Dates isCheckinOpen={isCheckinOpen} />
+        <Dates isCheckinOpen={isCheckinOpen} isCheckoutOpen={isCheckoutOpen} />
         <Guests
           isOpen={isGuestsOpen}
           toggle={this.toggleGuestsDropdown}
