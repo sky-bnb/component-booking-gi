@@ -17,9 +17,9 @@ db.dropDatabase(() => {
     for (let j = 0; j < randomNumber(30, 70); j += 1) {
       dateSet.add(moment(faker.date.between(currentDate, threeMonthsAhead)).format('YYYY-MM-DD'));
     }
-  
+
     dateSet.forEach(element => dateArr.push(element));
-  
+
     const newBooking = new Booking({
       _id: i,
       ownerName: faker.name.firstName(),

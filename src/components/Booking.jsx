@@ -37,55 +37,66 @@ class Booking extends React.Component {
       numReviews: 102,
       numViews: 0,
       rating: 4.3,
-      isDatesOpen: false,
+      isCheckinOpen: false,
+      isCheckoutOpen: false,
       isGuestsOpen: false,
       numAdults: 0,
       numChildren: 0,
       numInfants: 0,
     };
+
+    this.toggleGuestsDropdown = this.toggleGuestsDropdown.bind(this);
+    this.updateNumAdults = this.updateNumAdults.bind(this);
+    this.updateNumChildren = this.updateNumChildren.bind(this);
+    this.updateNumInfants = this.updateNumInfants.bind(this);
   }
 
-  toggleGuestsDropdown() {
-    this.setState({ isGuestsOpen: !this.state.isGuestsOpen });
+  toggleGuestsDropdown(e) {
+    e.preventDefault();
+    const { isGuestsOpen } = this.state;
+    this.setState({ isGuestsOpen: !isGuestsOpen });
   }
 
   updateNumAdults(value) {
-    this.setState(prev => {
-      return {
-        numAdults: prev.numAdults += value
-      };
-    });
+    this.setState(prev => ({ numAdults: prev.numAdults += value }));
   }
 
   updateNumChildren(value) {
-    this.setState(prev => {
-      return {
-        numChildren: prev.numChildren += value
-      };
-    });
+    this.setState(prev => ({ numChildren: prev.numChildren += value }));
   }
 
   updateNumInfants(value) {
-    this.setState(prev => {
-      return {
-        numInfants: prev.numInfants += value
-      };
-    });
+    this.setState(prev => ({ numInfants: prev.numInfants += value }));
   }
 
   render() {
-    return <StyledBooking>
-      <CloseButton />
-      <Price />
-      <Reviews numReviews={this.state.numReviews} rating={this.state.rating} />
-      <StyledBreak />
-      <Dates />
-      <Guests isOpen={this.state.isGuestsOpen} toggle={this.toggleGuestsDropdown.bind(this)} numAdults={this.state.numAdults} numChildren={this.state.numChildren} numInfants={this.state.numInfants} updateNumAdults={this.updateNumAdults.bind(this)} updateNumChildren={this.updateNumChildren.bind(this)} updateNumInfants={this.updateNumInfants.bind(this)}/>
-      <Book />
-      <StyledBreak />
-      <Info numViews={this.state.numViews}/>
-      <Report />      
-    </StyledBooking>;
+    const {
+      numReviews, rating, isCheckinOpen, isGuestsOpen, numAdults, numChildren, numInfants, numViews,
+    } = this.state;
+
+    return (
+      <StyledBooking>
+        <CloseButton />
+        <Price />
+        <Reviews numReviews={numReviews} rating={rating} />
+        <StyledBreak />
+        <Dates isCheckinOpen={isCheckinOpen} />
+        <Guests
+          isOpen={isGuestsOpen}
+          toggle={this.toggleGuestsDropdown}
+          numAdults={numAdults}
+          numChildren={numChildren}
+          numInfants={numInfants}
+          updateNumAdults={this.updateNumAdults}
+          updateNumChildren={this.updateNumChildren}
+          updateNumInfants={this.updateNumInfants}
+        />
+        <Book />
+        <StyledBreak />
+        <Info numViews={numViews} />
+        <Report />
+      </StyledBooking>
+    );
   }
 }
 

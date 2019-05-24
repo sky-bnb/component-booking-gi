@@ -33,14 +33,16 @@ const StyledSVG = styled.svg`
   margin-right: 8px;
 `;
 
-const GuestsButton = (props) => (
-  <StyledGuestsButton type="button" onClick={props.toggle} isOpen={props.isOpen}>
-    <StyledNumGuestsLabel>1 guest</StyledNumGuestsLabel>
-    <StyledSVG viewBox="0 0 18 18" role="presentation" focusable="false" height="16px" width="16px">
-      {props.isOpen ? <path d="m1.71 13.71a1 1 0 1 1 -1.42-1.42l8-8a1 1 0 0 1 1.41 0l8 8a1 1 0 1 1 -1.41 1.42l-7.29-7.29z" fillRule="evenodd" /> : <path d="m16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z" fillRule="evenodd" />}
-    </StyledSVG>
-  </StyledGuestsButton>
-);
+const GuestsButton = (props) => {
+  const { toggle, isOpen } = props;
+  return (
+    <StyledGuestsButton type="button" onClick={toggle} isOpen={isOpen}>
+      <StyledNumGuestsLabel>1 guest</StyledNumGuestsLabel>
+      <StyledSVG viewBox="0 0 18 18" role="presentation" focusable="false" height="16px" width="16px">
+        { isOpen ? <path d="m1.71 13.71a1 1 0 1 1 -1.42-1.42l8-8a1 1 0 0 1 1.41 0l8 8a1 1 0 1 1 -1.41 1.42l-7.29-7.29z" fillRule="evenodd" /> : <path d="m16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z" fillRule="evenodd" /> }
+      </StyledSVG>
+    </StyledGuestsButton>
+  );
+};
 
 export default GuestsButton;
-

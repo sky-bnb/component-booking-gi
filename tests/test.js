@@ -35,13 +35,13 @@ afterAll(() => db.close());
 
 describe('Database', () => {
   it('retrieves listing data from the database', () => {
-    return getBooking({ _id: 110}).exec()
+    return getBooking({ _id: 110 }).exec()
       .then(data => expect(data[0]._id).toBe(110))});
 });
 
 describe('API Calls', () => {
   it('should respond with index.html', async () => {
-    const res = await request(app).get('/')
+    const res = await request(app).get('/');
     expect(res.statusCode).toBe(200);
   });
 

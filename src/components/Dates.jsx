@@ -78,13 +78,15 @@ const Dates = () => (
   <StyledDates>
     <StyledDateLabel>Dates</StyledDateLabel>
     <StyledDatesBox>
-      <StyledDateField>Check-in
+      <StyledDateField>
+        Check-in
         <StyledDateInput placeholder="Check-in" />
       </StyledDateField>
       <StyledSVG viewBox="0 0 24 24" role="presentation" focusable="false" height="24px" width="24px">
         <path d="m0 12.5a.5.5 0 0 0 .5.5h21.79l-6.15 6.15a.5.5 0 1 0 .71.71l7-7v-.01a.5.5 0 0 0 .14-.35.5.5 0 0 0 -.14-.35v-.01l-7-7a .5.5 0 0 0 -.71.71l6.15 6.15h-21.79a.5.5 0 0 0 -.5.5z" fillRule="evenodd" />
       </StyledSVG>
-      <StyledDateField>Checkout
+      <StyledDateField>
+        Checkout
         <StyledDateInput placeholder="Checkout" />
       </StyledDateField>
     </StyledDatesBox>

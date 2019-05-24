@@ -17,12 +17,29 @@ const StyledGuestsLabel = styled.label`
   color: #484848;
 `;
 
-const Guests = (props) => (
-  <StyledGuests>
-    <StyledGuestsLabel>Guests</StyledGuestsLabel>
-    <GuestsButton isOpen={props.isOpen} toggle={props.toggle} />
-    {props.isOpen ? <GuestsDropdown toggle={props.toggle} numAdults={props.numAdults} numChildren={props.numChildren} numInfants={props.numInfants} updateNumAdults={props.updateNumAdults} updateNumChildren={props.updateNumChildren} updateNumInfants={props.updateNumInfants} /> : null}
-  </StyledGuests>
-);
+const Guests = (props) => {
+  const {
+    isOpen, toggle, numAdults, numChildren, numInfants,
+    updateNumAdults, updateNumChildren, updateNumInfants,
+  } = props;
+
+  return (
+    <StyledGuests>
+      <StyledGuestsLabel>Guests</StyledGuestsLabel>
+      <GuestsButton isOpen={isOpen} toggle={toggle} />
+      {isOpen ? (
+        <GuestsDropdown
+          toggle={toggle}
+          numAdults={numAdults}
+          numChildren={numChildren}
+          numInfants={numInfants}
+          updateNumAdults={updateNumAdults}
+          updateNumChildren={updateNumChildren}
+          updateNumInfants={updateNumInfants}
+        />
+      ) : null}
+    </StyledGuests>
+  );
+};
 
 export default Guests;
