@@ -10,10 +10,11 @@ import Info from './Info.jsx';
 import Report from './Report.jsx';
 
 const StyledBooking = styled.div`
-  padding: 24px;
-  width: 328px;
+  padding: 16px 24px 24px 24px;
+  width: 326px;
   height: 462px;
   margin: 0px;
+  border: 1px solid #e4e4e4;
   font-family: 'Quicksand', sans-serif;
 `;
 

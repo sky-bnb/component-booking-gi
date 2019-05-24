@@ -11,6 +11,8 @@ const StyledHomeAndViews = styled.div`
 `;
 
 const StyledLightbulb = styled.img`
+  height: 50px;
+  width: 50px;
 `;
 
 const StyledHomeMindsText = styled.div`
@@ -41,7 +43,7 @@ const Info = (props) => (
   <StyledInfo>
     <StyledHomeAndViews>
       <StyledHomeMindsText>This home is on people's minds.</StyledHomeMindsText>
-      <StyledHomeViewedText>It's been viewed {props.numViews}+ times in the past week.</StyledHomeViewedText>
+      <StyledHomeViewedText>It's been viewed {props.numViews > 500 ? '500+' : props.numViews} times in the past week.</StyledHomeViewedText>
     </StyledHomeAndViews>
     <StyledLightbulb src="lightbulb.gif" alt="lightbulb animation" />
   </StyledInfo>
