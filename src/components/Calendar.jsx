@@ -5,7 +5,8 @@ import Day from './Day.jsx';
 const StyledCalendar = styled.table`
   padding: 0px 10px;
   border-collapse: collapse;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
 `;
 
 const StyledRow = styled.tr`
