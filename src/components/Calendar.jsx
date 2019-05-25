@@ -5,6 +5,13 @@ import Day from './Day.jsx';
 
 const StyledCalendar = styled.table`
   padding: 0px 10px;
+  border-collapse: collapse;
+  display: inline-block;
+`;
+
+const StyledRow = styled.tr`
+  height: 41px;
+  width: 288px;
 `;
 
 // change size of calendar based on number of rendered weeks?
@@ -45,7 +52,7 @@ const Calendar = (props) => {
 
   return (
     <StyledCalendar>
-      <tbody>{buildMonth(calendarMonth).map(week => <tr>{ week.map(({ date, isBlank}, index) => <Day date={date} key={index} isBlank={isBlank} />) }</tr> )}</tbody>
+      <tbody>{buildMonth(calendarMonth).map(week => <StyledRow>{ week.map(({ date, isBlank}, index) => <Day date={date} key={index} isBlank={isBlank} />) }</StyledRow> )}</tbody>
     </StyledCalendar>
   );
 };

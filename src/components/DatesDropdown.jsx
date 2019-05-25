@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-// import moment from 'moment';
 import Calendar from './Calendar.jsx';
 
 const StyledDatesDropdown = styled.div`
   width: 332px;
-  height: 308px;
+  height: 328px;
   margin-top: 65px;
   background-color: rgb(255, 255, 255);
   border-radius: 3px;
@@ -13,9 +12,10 @@ const StyledDatesDropdown = styled.div`
   position: absolute;
   z-index: 2;
   transition: height 0.2s ease-in-out 0s;
+  text-align: center;
 `;
 
-const StyledButton = styled.button`
+const StyledMonthButton = styled.button`
   cursor: pointer;
   user-select: none;
   background-color: rgb(255, 255, 255);
@@ -30,6 +30,10 @@ const StyledButton = styled.button`
   border-image: initial;
   border-radius: 3px;
   padding: 6px 9px;
+
+  :hover {
+    border-color: rgb(196, 196, 196);
+  }
 `;
 
 const StyledSVG = styled.svg`
@@ -39,27 +43,32 @@ const StyledSVG = styled.svg`
 const StyledCalendarHeader = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: center;
-  padding: 22px 0px 15px 0px;
+  padding: 22px 22px 15px 22px;
 `;
 
 const StyledWeekTitleRow = styled.ul`
   display: flex;
-  justify-content: space-around;
-  padding: 0px 10px;
-  margin: 1px 0px;
+  justify-content: center;
+  padding: 0px 22px;
+  margin: 1px 0px 1px 0px;
   list-style: none;
+  height: 20px;
+  width: 288px;
 `;
 
 const StyledWeekTitle = styled.li`
   height: 20px;
   width: 41px;
-  padding: 0px;
+  display: flex;
+  justify-content: center;
+`;
+
+const StyledSmall = styled.small`
+  font-family: 'Quicksand', sans-serif;
+  font-size: 11.6667px;
   color: rgb(117, 117, 117)
-  font-size: smaller;
-  text-align: center;
-  line-height: 1.43;
 `;
 
 const StyledMonthTitle = styled.div`
@@ -68,32 +77,62 @@ const StyledMonthTitle = styled.div`
   font-size: 18px;
 `;
 
+const StyledQuestionButton = styled.button`
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 33px;
+  height: 26px;
+  background: none;
+  border-top: 26px solid transparent;
+  border-right: 33px solid rgb(0, 166, 153);
+  border-left: 0px;
+  border-bottom: 0px;
+  padding: 0px;
+  cursor: pointer;
+  overflow: visible;
+`;
+
+const StyledQuestionMark = styled.span`
+  color: rgb(255, 255, 255);
+  position: absolute;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  bottom: 0px;
+  right: 5px;
+  pointer: cursor;
+`;
+
 const DatesDropdown = (props) => {
   const { calendarMonth, updateCalendarMonth } = props;
 
   return (
   <StyledDatesDropdown>
     <StyledCalendarHeader>
-      <StyledButton onClick={() => updateCalendarMonth(-1)}>
+      <StyledMonthButton onClick={() => updateCalendarMonth(-1)}>
         <StyledSVG focusable="false" viewBox="0 0 1000 1000" height="19px" width="19px"><path d="M336.2 274.5l-210.1 210h805.4c13 0 23 10 23 23s-10 23-23 23H126.1l210.1 210.1c11 11 11 21 0 32-5 5-10 7-16 7s-11-2-16-7l-249.1-249c-11-11-11-21 0-32l249.1-249.1c21-21.1 53 10.9 32 32z" /></StyledSVG>
-      </StyledButton>
+      </StyledMonthButton>
       <StyledMonthTitle>{calendarMonth.format('MMMM YYYY')}</StyledMonthTitle>
-      <StyledButton onClick={() => updateCalendarMonth(1)}>
+      <StyledMonthButton onClick={() => updateCalendarMonth(1)}>
         <StyledSVG focusable="false" viewBox="0 0 1000 1000" height="19px" width="19px"><path d="M694.4 242.4l249.1 249.1c11 11 11 21 0 32L694.4 772.7c-5 5-10 7-16 7s-11-2-16-7c-11-11-11-21 0-32l210.1-210.1H67.1c-13 0-23-10-23-23s10-23 23-23h805.4L662.4 274.5c-21-21.1 11-53.1 32-32.1z" /></StyledSVG>
-      </StyledButton>
+      </StyledMonthButton>
     </StyledCalendarHeader>
 
       <StyledWeekTitleRow>
-        <StyledWeekTitle><small>Su</small></StyledWeekTitle>
-        <StyledWeekTitle><small>Mo</small></StyledWeekTitle>
-        <StyledWeekTitle><small>Tu</small></StyledWeekTitle>
-        <StyledWeekTitle><small>We</small></StyledWeekTitle>
-        <StyledWeekTitle><small>Th</small></StyledWeekTitle>
-        <StyledWeekTitle><small>Fr</small></StyledWeekTitle>
-        <StyledWeekTitle><small>Sa</small></StyledWeekTitle>
+        <StyledWeekTitle><StyledSmall>Su</StyledSmall></StyledWeekTitle>
+        <StyledWeekTitle><StyledSmall>Mo</StyledSmall></StyledWeekTitle>
+        <StyledWeekTitle><StyledSmall>Tu</StyledSmall></StyledWeekTitle>
+        <StyledWeekTitle><StyledSmall>We</StyledSmall></StyledWeekTitle>
+        <StyledWeekTitle><StyledSmall>Th</StyledSmall></StyledWeekTitle>
+        <StyledWeekTitle><StyledSmall>Fr</StyledSmall></StyledWeekTitle>
+        <StyledWeekTitle><StyledSmall>Sa</StyledSmall></StyledWeekTitle>
       </StyledWeekTitleRow>
 
     <Calendar calendarMonth={calendarMonth}/>
+    <StyledQuestionButton></StyledQuestionButton>
+    <StyledQuestionMark>?</StyledQuestionMark>
   </StyledDatesDropdown>
   );
 };
