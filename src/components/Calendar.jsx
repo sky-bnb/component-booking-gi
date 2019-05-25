@@ -4,13 +4,10 @@ import moment from 'moment';
 import Day from './Day.jsx';
 
 const StyledCalendar = styled.table`
+  padding: 0px 10px;
 `;
 
 // change size of calendar based on number of rendered weeks?
-
-const StyledHeader = styled.th`
-`;
-
 
 const buildMonth = dateObj => {
   const firstDayOfMonth = dateObj.startOf('month').format('d');
@@ -41,15 +38,14 @@ const buildMonth = dateObj => {
   return monthArray;
 }
 
-const month = buildMonth(moment());
+const month = buildMonth(moment("2019-03"))
 
-const Calendar = () => {
+const Calendar = (props) => {
+  const { calendarMonth } = props;
 
   return (
     <StyledCalendar>
-      <caption>CALENDAR</caption>
-      <thead><tr><StyledHeader>Su</StyledHeader><StyledHeader>Mo</StyledHeader><StyledHeader>Tu</StyledHeader><StyledHeader>We</StyledHeader><StyledHeader>StyledHeader</StyledHeader><StyledHeader>Fr</StyledHeader><StyledHeader>Sa</StyledHeader></tr></thead>
-      <tbody>{month.map(week => <tr>{ week.map(({ date, isBlank}, index) => <Day date={date} key={index} isBlank={isBlank} />) }</tr> )}</tbody>
+      <tbody>{buildMonth(calendarMonth).map(week => <tr>{ week.map(({ date, isBlank}, index) => <Day date={date} key={index} isBlank={isBlank} />) }</tr> )}</tbody>
     </StyledCalendar>
   );
 };

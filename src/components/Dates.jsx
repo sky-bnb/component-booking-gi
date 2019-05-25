@@ -76,7 +76,7 @@ const StyledDateInput = styled.input`
 `;
 
 const Dates = (props) => {
-  const { isCheckinOpen, isCheckoutOpen } = props;
+  const { isCheckinOpen, isCheckoutOpen, calendarMonth, updateCalendarMonth } = props;
 
   return (
     <StyledDates>
@@ -94,7 +94,7 @@ const Dates = (props) => {
           <StyledDateInput placeholder="Checkout" />
         </StyledDateField>
       </StyledDatesBox>
-      {isCheckinOpen || isCheckoutOpen ? <DatesDropdown isCheckinOpen={isCheckinOpen} isCheckoutOpen={isCheckoutOpen} /> : null}
+      {isCheckinOpen || isCheckoutOpen ? <DatesDropdown isCheckinOpen={isCheckinOpen} isCheckoutOpen={isCheckoutOpen} calendarMonth={calendarMonth} updateCalendarMonth={updateCalendarMonth} /> : null}
     </StyledDates>
   );
 };
