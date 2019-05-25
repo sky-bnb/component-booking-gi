@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import moment from 'moment';
 import Day from './Day.jsx';
 
 const StyledCalendar = styled.table`
@@ -16,16 +15,12 @@ const StyledRow = styled.tr`
 
 // change size of calendar based on number of rendered weeks?
 
-const buildMonth = dateObj => {
-  const firstDayOfMonth = dateObj.startOf('month').format('d');
-  const daysInMonth = dateObj.endOf('month').format('D');
-  const daysArray = [];
+const buildMonth = (firstDayOfMonth, daysInMonth) => {
+  const daysArray = Array(firstDayOfMonth);
   const monthArray = [];
-  const empty = { date: null, isBlank: true };
+  const dayPadding = { date: null, isBlank: true };
 
-  for (let i = 0; i < firstDayOfMonth; i += 1) {
-    daysArray.push(empty);
-  }
+  daysArray.fill(dayPadding);
 
   for (let i = 1; i <= daysInMonth; i += 1) {
     daysArray.push({ date: i, isBlank: false });
@@ -34,7 +29,7 @@ const buildMonth = dateObj => {
   const daysToPad = 7 - (daysArray.length % 7);
 
   for (let i = 0; i < daysToPad; i += 1) {
-    daysArray.push(empty);
+    daysArray.push(dayPadding);
   }
 
   for (let i = 0; i < daysArray.length / 7; i += 1) {
@@ -45,14 +40,12 @@ const buildMonth = dateObj => {
   return monthArray;
 }
 
-const month = buildMonth(moment("2019-03"))
-
 const Calendar = (props) => {
-  const { calendarMonth } = props;
+  const { firstDayOfMonth, daysInMonth } = props;
 
   return (
     <StyledCalendar>
-      <tbody>{buildMonth(calendarMonth).map(week => <StyledRow>{ week.map(({ date, isBlank}, index) => <Day date={date} key={index} isBlank={isBlank} />) }</StyledRow> )}</tbody>
+      <tbody>{buildMonth(firstDayOfMonth, daysInMonth).map(week => <StyledRow>{ week.map(({ date, isBlank}, index) => <Day date={date} key={index} isBlank={isBlank} />) }</StyledRow> )}</tbody>
     </StyledCalendar>
   );
 };
