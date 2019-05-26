@@ -2,14 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledGuestsDropdown = styled.div`
+  position: absolute;
   margin: 0px 0px 16px;
   padding: 0px 16px 0px 16px;
   background-color: rgb(255, 255, 255);
   border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 6px;
   height: 300px;
-  width: 296px;
-  position: absolute;
+  width: 100%;
+  min-width: 280px;
+  box-sizing: border-box;
   z-index: 2;
 `;
 
@@ -20,18 +22,21 @@ const StyledGuestsMenuWrapper = styled.div`
 const StyledAdultRow = styled.div`
   margin: 16px 0px 16px 0px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 `;
 
 const StyledChildrenRow = styled.div`
   margin: 24px 0px 24px 0px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 `;
 
 const StyledInfantRow = styled.div`
   margin: 24px 0px 24px 0px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 `;
 
@@ -44,7 +49,6 @@ const StyledMenuText = styled.div`
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
-  width: 176px;
 `;
 
 const StyledSubMenuText = styled.div`

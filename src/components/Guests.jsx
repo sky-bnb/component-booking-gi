@@ -5,6 +5,7 @@ import GuestsDropdown from './GuestsDropdown.jsx';
 
 const StyledGuests = styled.div`
   margin-bottom: 16px;
+  position: relative;
 `;
 
 const StyledGuestsLabel = styled.label`

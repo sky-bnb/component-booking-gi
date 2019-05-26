@@ -69,8 +69,8 @@ const StyledHighlight = styled.div`
   margin: 8px 8px 8px 8px;
   border-radius: 3px;
   overflow: hidden;
-  background: ${({ isCheckinOpen, isCheckoutOpen }) => isCheckinOpen || isCheckoutOpen ? 'rgb(153, 237, 230)' : 'white'};
-  border-color: ${({ isCheckinOpen, isCheckoutOpen }) => isCheckinOpen || isCheckoutOpen ? 'rgb(153, 237, 230)' : 'white'};
+  background: ${({ isCheckinOpen, isCheckoutOpen }) => isCheckinOpen || isCheckoutOpen ? 'rgb(153, 237, 230)' : 'rgb(255, 255, 255)'};
+  border-color: ${({ isCheckinOpen, isCheckoutOpen }) => isCheckinOpen || isCheckoutOpen ? 'rgb(153, 237, 230)' : 'rgb(255, 255, 255)'};
 `;
 
 const StyledSVGWrapper = styled.div`

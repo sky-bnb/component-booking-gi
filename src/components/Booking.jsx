@@ -12,7 +12,7 @@ import Report from './Report.jsx';
 
 const StyledBooking = styled.div`
   padding: 16px 24px 24px 24px;
-  width: 326px;
+  width: 90%;
   height: 462px;
   margin: 0px;
   border: 1px solid #e4e4e4;
