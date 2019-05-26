@@ -83,7 +83,7 @@ const StyledDateInput = styled.input`
 
 const Dates = (props) => {
   const {
-    isCheckinOpen, isCheckoutOpen, calendarMonth, updateCalendarMonth
+    isCheckinOpen, checkinValue, isCheckoutOpen, checkoutValue, calendarMonth, updateCalendarMonth
   } = props;
 
   return (
@@ -91,13 +91,13 @@ const Dates = (props) => {
       <StyledDateLabel>Dates</StyledDateLabel>
       <StyledDatesBox>
         <StyledDatesRow>
-          <StyledDateInput placeholder="Check-in" />  
-          <StyledDateField>Check-in</StyledDateField>
+          <StyledDateInput type="text" placeholder="Check-in" />  
+          <StyledDateField>{checkinValue}</StyledDateField>
           <StyledSVG viewBox="0 0 24 24" role="presentation" focusable="false">
             <path d="m0 12.5a.5.5 0 0 0 .5.5h21.79l-6.15 6.15a.5.5 0 1 0 .71.71l7-7v-.01a.5.5 0 0 0 .14-.35.5.5 0 0 0 -.14-.35v-.01l-7-7a .5.5 0 0 0 -.71.71l6.15 6.15h-21.79a.5.5 0 0 0 -.5.5z" fillRule="evenodd" />
           </StyledSVG>
-          <StyledDateInput placeholder="Checkout" />
-          <StyledDateField>Checkout</StyledDateField>
+          <StyledDateInput type="text" placeholder="Checkout" />
+          <StyledDateField>{checkoutValue}</StyledDateField>
         </StyledDatesRow>
       </StyledDatesBox>
       {isCheckinOpen || isCheckoutOpen ? <DatesDropdown

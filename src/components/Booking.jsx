@@ -37,7 +37,9 @@ class Booking extends React.Component {
       numViews: 0,
       rating: 4.3,
       isCheckinOpen: false,
+      checkinValue: 'Check-in',
       isCheckoutOpen: false,
+      checkoutValue: 'Checkout',
       isGuestsOpen: false,
       numAdults: 1,
       numChildren: 0,
@@ -78,7 +80,7 @@ class Booking extends React.Component {
   render() {
     const {
       numReviews, rating, isCheckinOpen, isCheckoutOpen, isGuestsOpen, numAdults,
-      numChildren, numInfants, numViews, calendarMonth,
+      numChildren, numInfants, numViews, calendarMonth, checkinValue, checkoutValue
     } = this.state;
 
     return (
@@ -92,6 +94,8 @@ class Booking extends React.Component {
           isCheckoutOpen={isCheckoutOpen}
           calendarMonth={calendarMonth}
           updateCalendarMonth={this.updateCalendarMonth}
+          checkinValue={checkinValue}
+          checkoutValue={checkoutValue}
         />
         <Guests
           isOpen={isGuestsOpen}
