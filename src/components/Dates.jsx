@@ -9,14 +9,6 @@ const StyledDates = styled.div`
   margin-bottom: 8px;
 `;
 
-const StyledSVG = styled.svg`
-  display: table-cell;
-  height: 24px;
-  width: 24px;
-  padding: 8px 0px 8px 0px;
-  margin: 0px;
-`;
-
 const StyledDateLabel = styled.label`
   overflow-wrap: break-word;
   font-family: 'Quicksand', sans-serif;
@@ -46,6 +38,7 @@ const StyledDatesRow = styled.div`
 
 const StyledDateField = styled.div`
   display: table-cell;
+  position: relative;
   font-weight: 400;
   font-size: 17px;
   color: rgb(117, 117, 117);
@@ -58,6 +51,8 @@ const StyledDateField = styled.div`
 
 const StyledDateInput = styled.input`
   position: absolute;
+  top: 0;
+  left: 0;
   font-size: 16px;
   font-weight: 400;
   opacity: 0;
@@ -74,11 +69,18 @@ const StyledDateInput = styled.input`
   text-transform: none;
   text-indent: 0px;
   text-shadow: none;
-  display: inline-block;
   text-align: start;
   margin: 0em;
   font: 400 11px system-ui;
   padding: 1px;
+`;
+
+const StyledSVG = styled.svg`
+  display: table-cell;
+  height: 24px;
+  width: 24px;
+  padding: 8px 0px 8px 0px;
+  margin: 0px;
 `;
 
 const Dates = (props) => {
@@ -91,13 +93,17 @@ const Dates = (props) => {
       <StyledDateLabel>Dates</StyledDateLabel>
       <StyledDatesBox>
         <StyledDatesRow>
-          <StyledDateInput type="text" placeholder="Check-in" />  
-          <StyledDateField>{checkinValue}</StyledDateField>
+          <StyledDateField>
+            {checkinValue}
+            <StyledDateInput type="text" placeholder="Check-in" />
+          </StyledDateField>
           <StyledSVG viewBox="0 0 24 24" role="presentation" focusable="false">
             <path d="m0 12.5a.5.5 0 0 0 .5.5h21.79l-6.15 6.15a.5.5 0 1 0 .71.71l7-7v-.01a.5.5 0 0 0 .14-.35.5.5 0 0 0 -.14-.35v-.01l-7-7a .5.5 0 0 0 -.71.71l6.15 6.15h-21.79a.5.5 0 0 0 -.5.5z" fillRule="evenodd" />
           </StyledSVG>
-          <StyledDateInput type="text" placeholder="Checkout" />
-          <StyledDateField>{checkoutValue}</StyledDateField>
+          <StyledDateField>
+            {checkoutValue}
+            <StyledDateInput type="text" placeholder="Checkout" />
+          </StyledDateField>
         </StyledDatesRow>
       </StyledDatesBox>
       {isCheckinOpen || isCheckoutOpen ? <DatesDropdown
