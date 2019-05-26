@@ -37,9 +37,9 @@ class Booking extends React.Component {
       numViews: 0,
       rating: 4.3,
       isCheckinOpen: false,
-      checkinValue: '',
+      checkinValue: 'Check-in',
       isCheckoutOpen: false,
-      checkoutValue: '',
+      checkoutValue: 'Checkout',
       isGuestsOpen: false,
       numAdults: 1,
       numChildren: 0,
@@ -61,19 +61,13 @@ class Booking extends React.Component {
   toggleCheckinDropdown(e) {
     e.preventDefault();
     const { isCheckinOpen } = this.state;
-    const currentTarget = e.currentTarget;
-    setTimeout(() => {
-      if (!currentTarget.contains(document.activeElement)) {
-        console.log(document.activeElement)
-      };
-    });
-    this.setState({ isCheckinOpen: !isCheckinOpen });
+    this.setState({ isCheckinOpen: !isCheckinOpen, isCheckoutOpen: false });
   }
 
   toggleCheckoutDropdown(e) {
     e.preventDefault();
     const { isCheckoutOpen } = this.state;
-    this.setState({ isCheckoutOpen: !isCheckoutOpen });
+    this.setState({ isCheckoutOpen: !isCheckoutOpen, isCheckinOpen: false });
   }
 
   toggleGuestsDropdown(e) {
@@ -88,12 +82,10 @@ class Booking extends React.Component {
   }
 
   updateCheckinDate(e) {
-    console.log(e.target.value);
     this.setState({ checkinValue: e.target.value });
   }
 
   updateCheckoutDate(e) {
-    console.log(e.target.value);
     this.setState({ checkoutValue: e.target.value });
   }
 
