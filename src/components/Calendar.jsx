@@ -14,8 +14,6 @@ const StyledRow = styled.tr`
   width: 288px;
 `;
 
-// change size of calendar based on number of rendered weeks?
-
 const buildMonth = (firstDayOfMonth, daysInMonth) => {
   const daysArray = Array(firstDayOfMonth);
   const monthArray = [];

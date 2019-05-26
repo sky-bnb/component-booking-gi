@@ -37,9 +37,9 @@ class Booking extends React.Component {
       numViews: 0,
       rating: 4.3,
       isCheckinOpen: false,
-      checkinValue: 'Check-in',
+      checkinValue: '',
       isCheckoutOpen: false,
-      checkoutValue: 'Checkout',
+      checkoutValue: '',
       isGuestsOpen: false,
       numAdults: 1,
       numChildren: 0,
@@ -48,10 +48,32 @@ class Booking extends React.Component {
     };
 
     this.toggleGuestsDropdown = this.toggleGuestsDropdown.bind(this);
+    this.toggleCheckinDropdown = this.toggleCheckinDropdown.bind(this);
+    this.toggleCheckoutDropdown = this.toggleCheckoutDropdown.bind(this);
     this.updateCalendarMonth = this.updateCalendarMonth.bind(this);
+    this.updateCheckinDate = this.updateCheckinDate.bind(this);
+    this.updateCheckoutDate = this.updateCheckoutDate.bind(this);
     this.updateNumAdults = this.updateNumAdults.bind(this);
     this.updateNumChildren = this.updateNumChildren.bind(this);
     this.updateNumInfants = this.updateNumInfants.bind(this);
+  }
+
+  toggleCheckinDropdown(e) {
+    e.preventDefault();
+    const { isCheckinOpen } = this.state;
+    const currentTarget = e.currentTarget;
+    setTimeout(() => {
+      if (!currentTarget.contains(document.activeElement)) {
+        console.log(document.activeElement)
+      };
+    });
+    this.setState({ isCheckinOpen: !isCheckinOpen });
+  }
+
+  toggleCheckoutDropdown(e) {
+    e.preventDefault();
+    const { isCheckoutOpen } = this.state;
+    this.setState({ isCheckoutOpen: !isCheckoutOpen });
   }
 
   toggleGuestsDropdown(e) {
@@ -63,6 +85,16 @@ class Booking extends React.Component {
   updateCalendarMonth(value) {
     const { calendarMonth } = this.state;
     this.setState({ calendarMonth: calendarMonth.add(value, 'months') });
+  }
+
+  updateCheckinDate(e) {
+    console.log(e.target.value);
+    this.setState({ checkinValue: e.target.value });
+  }
+
+  updateCheckoutDate(e) {
+    console.log(e.target.value);
+    this.setState({ checkoutValue: e.target.value });
   }
 
   updateNumAdults(value) {
@@ -80,7 +112,7 @@ class Booking extends React.Component {
   render() {
     const {
       numReviews, rating, isCheckinOpen, isCheckoutOpen, isGuestsOpen, numAdults,
-      numChildren, numInfants, numViews, calendarMonth, checkinValue, checkoutValue
+      numChildren, numInfants, numViews, calendarMonth, checkinValue, checkoutValue,
     } = this.state;
 
     return (
@@ -94,8 +126,12 @@ class Booking extends React.Component {
           isCheckoutOpen={isCheckoutOpen}
           calendarMonth={calendarMonth}
           updateCalendarMonth={this.updateCalendarMonth}
+          updateCheckinDate={this.updateCheckinDate}
+          updateCheckoutDate={this.updateCheckoutDate}
           checkinValue={checkinValue}
           checkoutValue={checkoutValue}
+          toggleCheckinDropdown={this.toggleCheckinDropdown}
+          toggleCheckoutDropdown={this.toggleCheckoutDropdown}
         />
         <Guests
           isOpen={isGuestsOpen}

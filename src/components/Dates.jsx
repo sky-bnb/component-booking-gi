@@ -75,6 +75,18 @@ const StyledDateInput = styled.input`
   padding: 1px;
 `;
 
+const StyledHighlight = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0:
+  padding: 0px 6px 0px 6px;
+  border-radius: 3px;
+  overflow: hidden;
+  white-space: nowrap;
+  background: ${({ isCheckinOpen }) => isCheckinOpen ? 'rgb(153, 237, 230)' : null};
+  border-color: ${({ isCheckinOpen }) => isCheckinOpen ? 'rgb(153, 237, 230)' : null};
+`;
+
 const StyledSVG = styled.svg`
   display: table-cell;
   height: 24px;
@@ -85,7 +97,8 @@ const StyledSVG = styled.svg`
 
 const Dates = (props) => {
   const {
-    isCheckinOpen, checkinValue, isCheckoutOpen, checkoutValue, calendarMonth, updateCalendarMonth
+    isCheckinOpen, checkinValue, isCheckoutOpen, checkoutValue, calendarMonth, updateCalendarMonth,
+    updateCheckinDate, updateCheckoutDate, toggleCheckinDropdown, toggleCheckoutDropdown,
   } = props;
 
   return (
@@ -95,14 +108,16 @@ const Dates = (props) => {
         <StyledDatesRow>
           <StyledDateField>
             {checkinValue}
-            <StyledDateInput type="text" placeholder="Check-in" />
+            <StyledHighlight isCheckinOpen={isCheckinOpen} />
+            <StyledDateInput type="text" placeholder="Check-in" value={checkinValue} onChange={updateCheckinDate} onClick={toggleCheckinDropdown} />
           </StyledDateField>
           <StyledSVG viewBox="0 0 24 24" role="presentation" focusable="false">
             <path d="m0 12.5a.5.5 0 0 0 .5.5h21.79l-6.15 6.15a.5.5 0 1 0 .71.71l7-7v-.01a.5.5 0 0 0 .14-.35.5.5 0 0 0 -.14-.35v-.01l-7-7a .5.5 0 0 0 -.71.71l6.15 6.15h-21.79a.5.5 0 0 0 -.5.5z" fillRule="evenodd" />
           </StyledSVG>
           <StyledDateField>
             {checkoutValue}
-            <StyledDateInput type="text" placeholder="Checkout" />
+            <StyledHighlight isCheckoutOpen={isCheckoutOpen} />
+            <StyledDateInput type="text" placeholder="Checkout" value={checkoutValue} onChange={updateCheckoutDate} onClick={toggleCheckoutDropdown} />
           </StyledDateField>
         </StyledDatesRow>
       </StyledDatesBox>
