@@ -26,7 +26,13 @@ const Guests = (props) => {
   return (
     <StyledGuests>
       <StyledGuestsLabel>Guests</StyledGuestsLabel>
-      <GuestsButton isOpen={isOpen} toggle={toggle} />
+      <GuestsButton
+        isOpen={isOpen}
+        toggle={toggle}
+        numAdults={numAdults}
+        numChildren={numChildren}
+        numInfants={numInfants}
+      />
       {isOpen ? (
         <GuestsDropdown
           toggle={toggle}
