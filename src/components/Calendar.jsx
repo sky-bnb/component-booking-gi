@@ -26,7 +26,7 @@ const buildMonth = (firstDayOfMonth, daysInMonth) => {
   for (let i = 1; i <= daysInMonth; i += 1) {
     daysArray.push({ date: i, isBlank: false });
   }
-  
+
   const daysToPad = 7 - (daysArray.length % 7);
 
   for (let i = 0; i < daysToPad; i += 1) {
@@ -39,14 +39,16 @@ const buildMonth = (firstDayOfMonth, daysInMonth) => {
   }
 
   return monthArray;
-}
+};
 
 const Calendar = (props) => {
   const { firstDayOfMonth, daysInMonth } = props;
 
   return (
     <StyledCalendar>
-      <tbody>{buildMonth(firstDayOfMonth, daysInMonth).map(week => <StyledRow>{ week.map(({ date, isBlank}, index) => <Day date={date} key={index} isBlank={isBlank} />) }</StyledRow> )}</tbody>
+      <tbody>{ buildMonth(firstDayOfMonth, daysInMonth).map(week => 
+        <StyledRow>{ week.map(({ date, isBlank}, index) => 
+        <Day date={date} key={index} isBlank={isBlank} />) }</StyledRow>) }</tbody>
     </StyledCalendar>
   );
 };

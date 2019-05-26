@@ -10,11 +10,11 @@ const StyledDates = styled.div`
 `;
 
 const StyledSVG = styled.svg`
+  display: table-cell;
   height: 24px;
   width: 24px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  flex-shrink: 0;
+  padding: 8px 0px 8px 0px;
+  margin: 0px;
 `;
 
 const StyledDateLabel = styled.label`
@@ -28,8 +28,7 @@ const StyledDateLabel = styled.label`
 `;
 
 const StyledDatesBox = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: table;
   height: 40px;
   width: 100%;
   border-width: 1px;
@@ -38,25 +37,32 @@ const StyledDatesBox = styled.div`
   border-radius: 2px;
 `;
 
-const StyledDateField = styled.div`
-  display: block;
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 24px;
-  color: rgb(117, 117, 117);
+const StyledDatesRow = styled.div`
+  display: table-row;
+  table-layout: fixed;
   width: 100%;
+  height: 40px;
+`;
+
+const StyledDateField = styled.div`
+  display: table-cell;
+  font-weight: 400;
+  font-size: 17px;
+  color: rgb(117, 117, 117);
   vertical-align: middle;
   margin: 0px;
-  padding: 8px;
+  padding: 8px 14px 8px 14px;
   background: rgb(255, 255, 255);
+  width: auto;
 `;
 
 const StyledDateInput = styled.input`
+  position: absolute;
   font-size: 16px;
   font-weight: 400;
   opacity: 0;
   height: 100%;
-  width: 40%;
+  width: 100%;
   border-width: 0px;
   border-style: initial;
   border-color: initial;
@@ -76,25 +82,30 @@ const StyledDateInput = styled.input`
 `;
 
 const Dates = (props) => {
-  const { isCheckinOpen, isCheckoutOpen, calendarMonth, updateCalendarMonth } = props;
+  const {
+    isCheckinOpen, isCheckoutOpen, calendarMonth, updateCalendarMonth
+  } = props;
 
   return (
     <StyledDates>
       <StyledDateLabel>Dates</StyledDateLabel>
       <StyledDatesBox>
-        <StyledDateField>
-          Check-in
-          <StyledDateInput placeholder="Check-in" />
-        </StyledDateField>
-        <StyledSVG viewBox="0 0 24 24" role="presentation" focusable="false" height="24px" width="24px">
-          <path d="m0 12.5a.5.5 0 0 0 .5.5h21.79l-6.15 6.15a.5.5 0 1 0 .71.71l7-7v-.01a.5.5 0 0 0 .14-.35.5.5 0 0 0 -.14-.35v-.01l-7-7a .5.5 0 0 0 -.71.71l6.15 6.15h-21.79a.5.5 0 0 0 -.5.5z" fillRule="evenodd" />
-        </StyledSVG>
-        <StyledDateField>
-          Checkout
+        <StyledDatesRow>
+          <StyledDateInput placeholder="Check-in" />  
+          <StyledDateField>Check-in</StyledDateField>
+          <StyledSVG viewBox="0 0 24 24" role="presentation" focusable="false">
+            <path d="m0 12.5a.5.5 0 0 0 .5.5h21.79l-6.15 6.15a.5.5 0 1 0 .71.71l7-7v-.01a.5.5 0 0 0 .14-.35.5.5 0 0 0 -.14-.35v-.01l-7-7a .5.5 0 0 0 -.71.71l6.15 6.15h-21.79a.5.5 0 0 0 -.5.5z" fillRule="evenodd" />
+          </StyledSVG>
           <StyledDateInput placeholder="Checkout" />
-        </StyledDateField>
+          <StyledDateField>Checkout</StyledDateField>
+        </StyledDatesRow>
       </StyledDatesBox>
-      {isCheckinOpen || isCheckoutOpen ? <DatesDropdown isCheckinOpen={isCheckinOpen} isCheckoutOpen={isCheckoutOpen} calendarMonth={calendarMonth} updateCalendarMonth={updateCalendarMonth} /> : null}
+      {isCheckinOpen || isCheckoutOpen ? <DatesDropdown
+        isCheckinOpen={isCheckinOpen}
+        isCheckoutOpen={isCheckoutOpen}
+        calendarMonth={calendarMonth}
+        updateCalendarMonth={updateCalendarMonth}
+        /> : null}
     </StyledDates>
   );
 };

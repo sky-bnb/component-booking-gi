@@ -60,24 +60,25 @@ class Booking extends React.Component {
 
   updateCalendarMonth(value) {
     const { calendarMonth } = this.state;
-    this.setState({ calendarMonth: calendarMonth.add(value, "months") });
+    this.setState({ calendarMonth: calendarMonth.add(value, 'months') });
   }
 
   updateNumAdults(value) {
-    this.setState(prev => ({ numAdults: prev.numAdults += value }));
+    this.setState(({ numAdults }) => ({ numAdults: numAdults += value }));
   }
 
   updateNumChildren(value) {
-    this.setState(prev => ({ numChildren: prev.numChildren += value }));
+    this.setState(({ numChildren }) => ({ numChildren: numChildren += value }));
   }
 
   updateNumInfants(value) {
-    this.setState(prev => ({ numInfants: prev.numInfants += value }));
+    this.setState(({ numInfants }) => ({ numInfants: numInfants += value }));
   }
 
   render() {
     const {
-      numReviews, rating, isCheckinOpen, isCheckoutOpen, isGuestsOpen, numAdults, numChildren, numInfants, numViews, calendarMonth,
+      numReviews, rating, isCheckinOpen, isCheckoutOpen, isGuestsOpen, numAdults,
+      numChildren, numInfants, numViews, calendarMonth,
     } = this.state;
 
     return (

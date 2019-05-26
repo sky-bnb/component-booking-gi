@@ -130,7 +130,8 @@ const StyledCounterText = styled.div`
 
 const GuestsDropdown = (props) => {
   const {
-    numAdults, numChildren, numInfants, toggle, updateNumAdults, updateNumChildren, updateNumInfants,
+    numAdults, numChildren, numInfants, toggle, updateNumAdults,
+    updateNumChildren, updateNumInfants,
   } = props;
 
   return (
