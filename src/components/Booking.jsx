@@ -44,6 +44,8 @@ class Booking extends React.Component {
       numAdults: 1,
       numChildren: 0,
       numInfants: 0,
+      maxGuests: 5,
+      maxInfants: 5,
       calendarMonth: moment(),
     };
 
@@ -103,8 +105,8 @@ class Booking extends React.Component {
 
   render() {
     const {
-      numReviews, rating, isCheckinOpen, isCheckoutOpen, isGuestsOpen, numAdults,
-      numChildren, numInfants, numViews, calendarMonth, checkinValue, checkoutValue,
+      numReviews, rating, isCheckinOpen, isCheckoutOpen, isGuestsOpen, numAdults, numChildren, numInfants, 
+      maxGuests, maxInfants, numViews, calendarMonth, checkinValue, checkoutValue,
     } = this.state;
 
     return (
@@ -131,6 +133,8 @@ class Booking extends React.Component {
           numAdults={numAdults}
           numChildren={numChildren}
           numInfants={numInfants}
+          maxGuests={maxGuests}
+          maxInfants={maxInfants}
           updateNumAdults={this.updateNumAdults}
           updateNumChildren={this.updateNumChildren}
           updateNumInfants={this.updateNumInfants}
