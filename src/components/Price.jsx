@@ -32,11 +32,15 @@ const StyledPricePerNight = styled.div`
   padding-left: 4px;
 `;
 
-const Price = () => (
-  <StyledPrice>
-    <StyledPriceAmt>$100</StyledPriceAmt>
-    <StyledPricePerNight>per night</StyledPricePerNight>
-  </StyledPrice>
-);
+const Price = (props) => {
+  const { price } = props;
+
+  return (
+    <StyledPrice>
+      <StyledPriceAmt>${price}</StyledPriceAmt>
+      <StyledPricePerNight>per night</StyledPricePerNight>
+    </StyledPrice>
+  );
+};
 
 export default Price;

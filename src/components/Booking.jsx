@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import moment from 'moment';
+import axios from 'axios';
 import CloseButton from './CloseButton.jsx';
 import Price from './Price.jsx';
 import Reviews from './Reviews.jsx';
@@ -33,9 +34,9 @@ class Booking extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      numReviews: 102,
+      numReviews: 0,
       numViews: 0,
-      rating: 4.3,
+      avgRating: 0,
       isCheckinOpen: false,
       checkinValue: '',
       isCheckoutOpen: false,
@@ -44,10 +45,18 @@ class Booking extends React.Component {
       numAdults: 1,
       numChildren: 0,
       numInfants: 0,
-      maxGuests: 5,
+      guestMax: 5,
       maxInfants: 5,
       calendarMonth: moment(),
       available: [],
+      _id: 0,
+      ownerName: '',
+      guestMax: 0,
+      price: 0,
+      cleaningFee: 0,
+      occupancyFee: 0,
+      minstay: 0,
+      maxStay: 0,
     };
 
     this.toggleGuestsDropdown = this.toggleGuestsDropdown.bind(this);
@@ -59,6 +68,37 @@ class Booking extends React.Component {
     this.updateNumAdults = this.updateNumAdults.bind(this);
     this.updateNumChildren = this.updateNumChildren.bind(this);
     this.updateNumInfants = this.updateNumInfants.bind(this);
+  }
+
+  componentDidMount() {
+    this.getData();
+  }
+
+  getData() {
+    const randomNum = Math.floor(Math.random() * 100) + 101;
+    axios.get(`/host/${randomNum}`)
+      .then(({ data }) => {
+        const {
+          _id, ownerName, guestMax, price, cleaningFee, occupancyFee, avgRating, numReviews, numViews, minstay, maxStay, available
+        } = data[0];
+
+        console.log (data, _id, ownerName, guestMax, price, cleaningFee, occupancyFee, avgRating, numReviews, numViews, minstay, maxStay, available )
+        this.setState({
+          _id: _id,
+          ownerName: ownerName,
+          guestMax: guestMax,
+          price: price,
+          cleaningFee: cleaningFee,
+          occupancyFee: occupancyFee,
+          avgRating: avgRating,
+          numReviews: numReviews,
+          numViews: numViews,
+          minstay: minstay,
+          maxStay: maxStay,
+          available: available,
+        });
+      })
+      .catch(err => console.error(err));
   }
 
   toggleCheckinDropdown(e) {
@@ -106,15 +146,15 @@ class Booking extends React.Component {
 
   render() {
     const {
-      numReviews, rating, isCheckinOpen, isCheckoutOpen, isGuestsOpen, numAdults, numChildren, numInfants, 
-      maxGuests, maxInfants, numViews, calendarMonth, checkinValue, checkoutValue,
+      numReviews, avgRating, isCheckinOpen, isCheckoutOpen, isGuestsOpen, numAdults, numChildren, numInfants, 
+      guestMax, maxInfants, numViews, calendarMonth, checkinValue, checkoutValue, price
     } = this.state;
 
     return (
       <StyledBooking>
         <CloseButton />
-        <Price />
-        <Reviews numReviews={numReviews} rating={rating} />
+        <Price price={price} />
+        <Reviews numReviews={numReviews} avgRating={avgRating} />
         <StyledBreak />
         <Dates
           isCheckinOpen={isCheckinOpen}
@@ -134,7 +174,7 @@ class Booking extends React.Component {
           numAdults={numAdults}
           numChildren={numChildren}
           numInfants={numInfants}
-          maxGuests={maxGuests}
+          guestMax={guestMax}
           maxInfants={maxInfants}
           updateNumAdults={this.updateNumAdults}
           updateNumChildren={this.updateNumChildren}

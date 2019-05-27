@@ -131,14 +131,14 @@ const StyledCounterText = styled.div`
 
 const GuestsDropdown = (props) => {
   const {
-    numAdults, numChildren, numInfants, maxGuests, maxInfants, toggle, updateNumAdults,
+    numAdults, numChildren, numInfants, guestMax, maxInfants, toggle, updateNumAdults,
     updateNumChildren, updateNumInfants,
   } = props;
 
   const isAdultMinusActive = numAdults > 1;
-  const isAdultPlusActive = numAdults + numChildren < maxGuests;
+  const isAdultPlusActive = numAdults + numChildren < guestMax;
   const isChildrenMinusActive = numChildren > 0;
-  const isChildrenPlusActive = numAdults + numChildren < maxGuests;
+  const isChildrenPlusActive = numAdults + numChildren < guestMax;
   const isInfantsMinusActive = numInfants > 0;
   const isInfantsPlusActive = numInfants < maxInfants;
 
@@ -202,7 +202,7 @@ const GuestsDropdown = (props) => {
         </StyledInfantRow>
         <StyledClosingWrapper>
           <StyledGuestMaxText>
-            {maxGuests} {maxGuests === 1 ? 'guest' : 'guests'} maximum. Infants don't count toward the number of guests.
+            {guestMax} {guestMax === 1 ? 'guest' : 'guests'} maximum. Infants don't count toward the number of guests.
           </StyledGuestMaxText>
           <StyledCloseButton onClick={toggle}>Close</StyledCloseButton>
         </StyledClosingWrapper>
