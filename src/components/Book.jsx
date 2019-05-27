@@ -32,6 +32,10 @@ const StyledBookButton = styled.button`
   margin: 0;
   padding: 10px 22px 10px 22px;
 
+  :active {
+    background: rgb(223, 60, 71);
+  }
+
   :focus {
     outline: -webkit-focus-ring-color auto 5px;
   };

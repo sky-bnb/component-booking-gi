@@ -47,6 +47,7 @@ class Booking extends React.Component {
       maxGuests: 5,
       maxInfants: 5,
       calendarMonth: moment(),
+      available: [],
     };
 
     this.toggleGuestsDropdown = this.toggleGuestsDropdown.bind(this);
