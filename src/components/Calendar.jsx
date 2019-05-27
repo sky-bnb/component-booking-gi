@@ -40,14 +40,21 @@ const buildMonth = (firstDayOfMonth, daysInMonth) => {
 };
 
 const Calendar = (props) => {
-  const { calendarMonth, firstDayOfMonth, daysInMonth } = props;
+  const { calendarMonth, firstDayOfMonth, daysInMonth, available, isCheckinOpen, isCheckoutOpen } = props;
 
   return (
     <StyledCalendar>
       <tbody>{ buildMonth(firstDayOfMonth, daysInMonth).map((week, index) => 
-        <StyledRow key={index}>{ week.map(({ date, isBlank }, index) => {
-          return <Day calendarMonth={calendarMonth} date={date} key={index} isBlank={isBlank} />;
-        })}
+        <StyledRow key={index}>
+          { week.map(({ date, isBlank }, index) => {
+            return ( <Day available={available}
+              calendarMonth={calendarMonth}
+              date={date} key={index}
+              isBlank={isBlank}
+              isCheckinOpen={isCheckinOpen}
+              isCheckoutOpen={isCheckoutOpen}
+            />);
+          })}
         </StyledRow>) }</tbody>
     </StyledCalendar>
   );

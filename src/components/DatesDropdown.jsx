@@ -105,7 +105,7 @@ const StyledQuestionMark = styled.span`
 `;
 
 const DatesDropdown = (props) => {
-  const { calendarMonth, updateCalendarMonth } = props;
+  const { calendarMonth, updateCalendarMonth, available, isCheckinOpen, isCheckoutOpen } = props;
 
   const firstDayOfMonth = Number(calendarMonth.startOf('month').format('d'));
   const daysInMonth = Number(calendarMonth.endOf('month').format('D'));
@@ -134,7 +134,14 @@ const DatesDropdown = (props) => {
           <StyledWeekTitle><StyledSmall>Sa</StyledSmall></StyledWeekTitle>
         </StyledWeekTitleRow>
 
-      <Calendar calendarMonth={calendarMonth} firstDayOfMonth={firstDayOfMonth} daysInMonth={daysInMonth} />
+      <Calendar
+        calendarMonth={calendarMonth}
+        firstDayOfMonth={firstDayOfMonth}
+        daysInMonth={daysInMonth}
+        available={available}
+        isCheckinOpen={isCheckinOpen}
+        isCheckoutOpen={isCheckoutOpen}
+      />
       <StyledQuestionButton />
       <StyledQuestionMark>?</StyledQuestionMark>
     </StyledDatesDropdown>
