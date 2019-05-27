@@ -202,7 +202,7 @@ const GuestsDropdown = (props) => {
         </StyledInfantRow>
         <StyledClosingWrapper>
           <StyledGuestMaxText>
-            2 guests maximum. Infants don't count toward the number of guests.
+            {maxGuests} {maxGuests === 1 ? 'guest' : 'guests'} maximum. Infants don't count toward the number of guests.
           </StyledGuestMaxText>
           <StyledCloseButton onClick={toggle}>Close</StyledCloseButton>
         </StyledClosingWrapper>

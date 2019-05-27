@@ -39,9 +39,9 @@ const StyledBookButton = styled.button`
 
 const StyledButtonText = styled.div`
   overflow-wrap: break-word;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.375em;
   color: rgb(255, 255, 255);
   margin: 0px;

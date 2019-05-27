@@ -11,9 +11,9 @@ const StyledGuestsButton = styled.button`
   width: 100%;
   background: rgb(255, 255, 255);
   border-color: rgb(235, 235, 235);
-  border-bottom-color: ${props => props.isOpen ? 'rgb(0, 132, 137)' : 'rgb(235, 235, 235)'};
+  border-bottom-color: ${ ({ isOpen }) => isOpen ? 'rgb(0, 132, 137)' : 'rgb(235, 235, 235)'};
   border-bottom-style: solid;
-  border-width: ${props => props.isOpen ? '1px 1px 2px 1px' : '1px'};
+  border-width: ${({ isOpen }) => isOpen ? '1px 1px 2px 1px' : '1px'};
   border-radius: 2px;
   padding: 8px;
   border-style: solid;
