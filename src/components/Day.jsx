@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import moment from 'moment';
 
 const StyledDay = styled.td`
   font-size: 14px;
@@ -12,16 +13,17 @@ const StyledDay = styled.td`
   text-align: center;
   text-decoration: line-through;
   color: rgb(216, 216, 216);
-  border: ${props => props.isBlank ? 'none' : '1px double rgb(228, 231, 231)'};
+  border: ${({ isBlank }) => isBlank ? 'none' : '1px double rgb(228, 231, 231)'};
   border-spacing: 0px;
   padding: 1px;
   margin: 0px;
 `;
 
 const Day = (props) => {
-  const { date, isBlank } = props;
+  const { calendarMonth, date, isBlank } = props;
+  const dateString = date ? moment(calendarMonth).format('YYYY-MM').toString().concat('-', date.toString().padStart(2, '0')) : null;
 
-  return <StyledDay isBlank={isBlank}>{date}</StyledDay>;
+  return <StyledDay value={dateString} isBlank={isBlank} onClick={() => console.log(dateString)}>{date}</StyledDay>;
 };
 
 export default Day;

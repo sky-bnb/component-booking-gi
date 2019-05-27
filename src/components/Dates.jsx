@@ -88,7 +88,7 @@ const StyledSVG = styled.svg`
 const Dates = (props) => {
   const {
     isCheckinOpen, checkinValue, isCheckoutOpen, checkoutValue, calendarMonth, updateCalendarMonth,
-    updateCheckinDate, updateCheckoutDate, toggleCheckinDropdown, toggleCheckoutDropdown,
+    updateCheckinDate, updateCheckoutDate, toggleCheckinDropdown, toggleCheckoutDropdown, available
   } = props;
 
   return (
@@ -116,6 +116,7 @@ const Dates = (props) => {
         isCheckoutOpen={isCheckoutOpen}
         calendarMonth={calendarMonth}
         updateCalendarMonth={updateCalendarMonth}
+        available={available}
         /> : null}
     </StyledDates>
   );

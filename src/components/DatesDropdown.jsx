@@ -134,7 +134,7 @@ const DatesDropdown = (props) => {
           <StyledWeekTitle><StyledSmall>Sa</StyledSmall></StyledWeekTitle>
         </StyledWeekTitleRow>
 
-      <Calendar firstDayOfMonth={firstDayOfMonth} daysInMonth={daysInMonth} />
+      <Calendar calendarMonth={calendarMonth} firstDayOfMonth={firstDayOfMonth} daysInMonth={daysInMonth} />
       <StyledQuestionButton />
       <StyledQuestionMark>?</StyledQuestionMark>
     </StyledDatesDropdown>

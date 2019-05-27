@@ -21,7 +21,7 @@ const StyledBooking = styled.div`
 `;
 
 const StyledBreak = styled.div`
-  width: 328px;
+  width: 100%;
   height: 0px;
   border: 1px;
   border-bottom-style: solid;
@@ -45,7 +45,7 @@ class Booking extends React.Component {
       numAdults: 1,
       numChildren: 0,
       numInfants: 0,
-      guestMax: 5,
+      guestMax: 0,
       maxInfants: 5,
       calendarMonth: moment(),
       available: [],
@@ -59,6 +59,8 @@ class Booking extends React.Component {
       maxStay: 0,
     };
 
+    this.getData();
+
     this.toggleGuestsDropdown = this.toggleGuestsDropdown.bind(this);
     this.toggleCheckinDropdown = this.toggleCheckinDropdown.bind(this);
     this.toggleCheckoutDropdown = this.toggleCheckoutDropdown.bind(this);
@@ -70,10 +72,6 @@ class Booking extends React.Component {
     this.updateNumInfants = this.updateNumInfants.bind(this);
   }
 
-  componentDidMount() {
-    this.getData();
-  }
-
   getData() {
     const randomNum = Math.floor(Math.random() * 100) + 101;
     axios.get(`/host/${randomNum}`)
@@ -82,7 +80,6 @@ class Booking extends React.Component {
           _id, ownerName, guestMax, price, cleaningFee, occupancyFee, avgRating, numReviews, numViews, minstay, maxStay, available
         } = data[0];
 
-        console.log (data, _id, ownerName, guestMax, price, cleaningFee, occupancyFee, avgRating, numReviews, numViews, minstay, maxStay, available )
         this.setState({
           _id: _id,
           ownerName: ownerName,
@@ -147,7 +144,7 @@ class Booking extends React.Component {
   render() {
     const {
       numReviews, avgRating, isCheckinOpen, isCheckoutOpen, isGuestsOpen, numAdults, numChildren, numInfants, 
-      guestMax, maxInfants, numViews, calendarMonth, checkinValue, checkoutValue, price
+      guestMax, maxInfants, numViews, calendarMonth, checkinValue, checkoutValue, price, available,
     } = this.state;
 
     return (
@@ -167,6 +164,7 @@ class Booking extends React.Component {
           checkoutValue={checkoutValue}
           toggleCheckinDropdown={this.toggleCheckinDropdown}
           toggleCheckoutDropdown={this.toggleCheckoutDropdown}
+          available={available}
         />
         <Guests
           isOpen={isGuestsOpen}

@@ -40,13 +40,15 @@ const buildMonth = (firstDayOfMonth, daysInMonth) => {
 };
 
 const Calendar = (props) => {
-  const { firstDayOfMonth, daysInMonth } = props;
+  const { calendarMonth, firstDayOfMonth, daysInMonth } = props;
 
   return (
     <StyledCalendar>
-      <tbody>{ buildMonth(firstDayOfMonth, daysInMonth).map(week => 
-        <StyledRow>{ week.map(({ date, isBlank}, index) => 
-        <Day date={date} key={index} isBlank={isBlank} />) }</StyledRow>) }</tbody>
+      <tbody>{ buildMonth(firstDayOfMonth, daysInMonth).map((week, index) => 
+        <StyledRow key={index}>{ week.map(({ date, isBlank }, index) => {
+          return <Day calendarMonth={calendarMonth} date={date} key={index} isBlank={isBlank} />;
+        })}
+        </StyledRow>) }</tbody>
     </StyledCalendar>
   );
 };
