@@ -63,13 +63,13 @@ class Booking extends React.Component {
   toggleCheckinDropdown(e) {
     e.preventDefault();
     const { isCheckinOpen } = this.state;
-    this.setState({ isCheckinOpen: !isCheckinOpen, isCheckoutOpen: false });
+    this.setState({ isCheckoutOpen: false }, () => setTimeout(() => this.setState({ isCheckinOpen: !isCheckinOpen }), 5));
   }
 
   toggleCheckoutDropdown(e) {
     e.preventDefault();
     const { isCheckoutOpen } = this.state;
-    this.setState({ isCheckoutOpen: !isCheckoutOpen, isCheckinOpen: false });
+    this.setState({ isCheckinOpen: false }, () => setTimeout(() => this.setState({ isCheckoutOpen: !isCheckoutOpen }), 5));
   }
 
   toggleGuestsDropdown(e) {
