@@ -19,13 +19,13 @@
 ## Usage
 
 1. npm start
-    starts express server
+- starts express server
 2. npm run mongo
-    starts mongo DB (if mongo config file is in default location)
+- starts mongo DB (if mongo config file is in default location)
 3. npm test
-    run tests on Jest in watch mode
+- run tests on Jest in watch mode
 4. npm run seed
-    seeds database
+- seeds database
 
 ## Requirements
 
