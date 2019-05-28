@@ -18,14 +18,14 @@
 
 ## Usage
 
-npm start
-> starts express server
-npm run mongo
-> starts mongo DB (if mongo config file is in default location)
-npm run seed
-> seeds database
-npm test
-> run tests on Jest. use --watch flag if desired
+1. npm start
+    starts express server
+2. npm run mongo
+    starts mongo DB (if mongo config file is in default location)
+3. npm test
+    run tests on Jest in watch mode
+4. npm run seed
+    seeds database
 
 ## Requirements
 
