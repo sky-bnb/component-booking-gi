@@ -2,14 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledGuestsDropdown = styled.div`
+  position: absolute;
   margin: 0px 0px 16px;
   padding: 0px 16px 0px 16px;
   background-color: rgb(255, 255, 255);
   border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 6px;
   height: 300px;
-  width: 296px;
-  position: absolute;
+  width: 100%;
+  min-width: 280px;
+  box-sizing: border-box;
   z-index: 2;
 `;
 
@@ -20,18 +22,21 @@ const StyledGuestsMenuWrapper = styled.div`
 const StyledAdultRow = styled.div`
   margin: 16px 0px 16px 0px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 `;
 
 const StyledChildrenRow = styled.div`
   margin: 24px 0px 24px 0px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 `;
 
 const StyledInfantRow = styled.div`
   margin: 24px 0px 24px 0px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 `;
 
@@ -44,7 +49,6 @@ const StyledMenuText = styled.div`
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
-  width: 176px;
 `;
 
 const StyledSubMenuText = styled.div`
@@ -85,7 +89,6 @@ const StyledButton = styled.button`
   height: 32px;
   width: 32px;
   cursor: pointer;
-
   display: block;
   
   :active {
@@ -101,7 +104,7 @@ const StyledSVG = styled.svg`
   fill: currentColor;
   margin: auto;
   display: block;
-`
+`;
 
 const StyledCloseButton = styled.button`
   color: #008489;
@@ -113,6 +116,7 @@ const StyledCloseButton = styled.button`
   font-size: 16px;
   float: right;
   outline: 0px;
+
   :hover {
     text-decoration: underline;
   }
@@ -128,60 +132,79 @@ const StyledCounterText = styled.div`
   text-size-adjust: 100%;
 `;
 
-const GuestsDropdown = (props) => (
-  <StyledGuestsDropdown>
-    <StyledGuestsMenuWrapper>
-      <StyledAdultRow>
-        <StyledMenuText>Adults</StyledMenuText>
-        <StyledMinusCounterPlusWrapper>
-          <StyledButton onClick={() => props.updateNumAdults(-1)}>
-            <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" /></StyledSVG>
-          </StyledButton>
-          <StyledCounterText>{props.numAdults}</StyledCounterText>
-          <StyledButton onClick={() => props.updateNumAdults(1)}>
-             <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" />
-            <rect height="12" rx="1" width="2" x="11" y="6" /></StyledSVG>
-          </StyledButton>
-        </StyledMinusCounterPlusWrapper>
-      </StyledAdultRow>
-      <StyledChildrenRow>
-        <StyledTextWrapper>
-          <StyledMenuText>Children</StyledMenuText>
-          <StyledSubMenuText>Ages 2-12</StyledSubMenuText>
-        </StyledTextWrapper>
-        <StyledMinusCounterPlusWrapper>
-          <StyledButton onClick={() => props.updateNumChildren(-1)}>
+const GuestsDropdown = (props) => {
+  const {
+    numAdults, numChildren, numInfants, toggle, updateNumAdults,
+    updateNumChildren, updateNumInfants,
+  } = props;
+
+  return (
+    <StyledGuestsDropdown>
+      <StyledGuestsMenuWrapper>
+        <StyledAdultRow>
+          <StyledMenuText>Adults</StyledMenuText>
+          <StyledMinusCounterPlusWrapper>
+            <StyledButton onClick={() => updateNumAdults(-1)}>
               <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" /></StyledSVG>
             </StyledButton>
-            <StyledCounterText>{props.numChildren}</StyledCounterText>
-            <StyledButton onClick={() => props.updateNumChildren(1)}>
-              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" />
-              <rect height="12" rx="1" width="2" x="11" y="6" /></StyledSVG>
-          </StyledButton>
-        </StyledMinusCounterPlusWrapper>
-      </StyledChildrenRow>
-      <StyledInfantRow>
-        <StyledTextWrapper>
-          <StyledMenuText>Infants</StyledMenuText>
-          <StyledSubMenuText>Under 2</StyledSubMenuText>
-        </StyledTextWrapper>
-        <StyledMinusCounterPlusWrapper>
-          <StyledButton onClick={() => props.updateNumInfants(-1)}>
-              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" /></StyledSVG>
+            <StyledCounterText>{numAdults}</StyledCounterText>
+            <StyledButton onClick={() => updateNumAdults(1)}>
+              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false">
+                <rect height="2" rx="1" width="12" x="6" y="11" />
+                <rect height="12" rx="1" width="2" x="11" y="6" />
+              </StyledSVG>
             </StyledButton>
-            <StyledCounterText>{props.numInfants}</StyledCounterText>
-            <StyledButton onClick={() => props.updateNumInfants(1)}>
-              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" />
-              <rect height="12" rx="1" width="2" x="11" y="6" /></StyledSVG>
-          </StyledButton>
-        </StyledMinusCounterPlusWrapper>
-      </StyledInfantRow>
-      <StyledClosingWrapper>
-        <StyledGuestMaxText>2 guests maximum. Infants don't count toward the number of guests.</StyledGuestMaxText>
-        <StyledCloseButton onClick={props.toggle}>Close</StyledCloseButton>
-      </StyledClosingWrapper>
-    </StyledGuestsMenuWrapper>
-  </StyledGuestsDropdown>
-);
+          </StyledMinusCounterPlusWrapper>
+        </StyledAdultRow>
+        <StyledChildrenRow>
+          <StyledTextWrapper>
+            <StyledMenuText>Children</StyledMenuText>
+            <StyledSubMenuText>Ages 2-12</StyledSubMenuText>
+          </StyledTextWrapper>
+          <StyledMinusCounterPlusWrapper>
+            <StyledButton onClick={() => updateNumChildren(-1)}>
+              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false">
+                <rect height="2" rx="1" width="12" x="6" y="11" />
+              </StyledSVG>
+            </StyledButton>
+            <StyledCounterText>{numChildren}</StyledCounterText>
+            <StyledButton onClick={() => updateNumChildren(1)}>
+              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false">
+                <rect height="2" rx="1" width="12" x="6" y="11" />
+                <rect height="12" rx="1" width="2" x="11" y="6" />
+              </StyledSVG>
+            </StyledButton>
+          </StyledMinusCounterPlusWrapper>
+        </StyledChildrenRow>
+        <StyledInfantRow>
+          <StyledTextWrapper>
+            <StyledMenuText>Infants</StyledMenuText>
+            <StyledSubMenuText>Under 2</StyledSubMenuText>
+          </StyledTextWrapper>
+          <StyledMinusCounterPlusWrapper>
+            <StyledButton onClick={() => updateNumInfants(-1)}>
+              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false">
+                <rect height="2" rx="1" width="12" x="6" y="11" />
+              </StyledSVG>
+            </StyledButton>
+            <StyledCounterText>{numInfants}</StyledCounterText>
+            <StyledButton onClick={() => updateNumInfants(1)}>
+              <StyledSVG viewBox="0 0 24 24" role="img" focusable="false">
+                <rect height="2" rx="1" width="12" x="6" y="11" />
+                <rect height="12" rx="1" width="2" x="11" y="6" />
+              </StyledSVG>
+            </StyledButton>
+          </StyledMinusCounterPlusWrapper>
+        </StyledInfantRow>
+        <StyledClosingWrapper>
+          <StyledGuestMaxText>
+            2 guests maximum. Infants don't count toward the number of guests.
+          </StyledGuestMaxText>
+          <StyledCloseButton onClick={toggle}>Close</StyledCloseButton>
+        </StyledClosingWrapper>
+      </StyledGuestsMenuWrapper>
+    </StyledGuestsDropdown>
+  );
+};
 
 export default GuestsDropdown;

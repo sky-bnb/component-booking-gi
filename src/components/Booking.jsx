@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import moment from 'moment';
 import CloseButton from './CloseButton.jsx';
 import Price from './Price.jsx';
 import Reviews from './Reviews.jsx';
@@ -10,14 +11,13 @@ import Info from './Info.jsx';
 import Report from './Report.jsx';
 
 const StyledBooking = styled.div`
-  padding: 24px;
-  width: 328px;
+  padding: 16px 24px 24px 24px;
+  width: 90%;
   height: 462px;
   margin: 0px;
+  border: 1px solid #e4e4e4;
   font-family: 'Quicksand', sans-serif;
 `;
-
-// StyledBooking.displayName = 'StyledBooking';
 
 const StyledBreak = styled.div`
   width: 328px;
@@ -33,61 +33,114 @@ class Booking extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      numReviews: 102,
       numViews: 0,
-<<<<<<< HEAD
-      isDatesOpen: false,
+      rating: 4.3,
+      isCheckinOpen: false,
+      checkinValue: '',
+      isCheckoutOpen: false,
+      checkoutValue: '',
       isGuestsOpen: false,
-      numAdults: 0,
+      numAdults: 1,
       numChildren: 0,
       numInfants: 0,
-=======
-      numReviews: 213,
-      rating: 4.33,
->>>>>>> master
+      calendarMonth: moment(),
     };
+
+    this.toggleGuestsDropdown = this.toggleGuestsDropdown.bind(this);
+    this.toggleCheckinDropdown = this.toggleCheckinDropdown.bind(this);
+    this.toggleCheckoutDropdown = this.toggleCheckoutDropdown.bind(this);
+    this.updateCalendarMonth = this.updateCalendarMonth.bind(this);
+    this.updateCheckinDate = this.updateCheckinDate.bind(this);
+    this.updateCheckoutDate = this.updateCheckoutDate.bind(this);
+    this.updateNumAdults = this.updateNumAdults.bind(this);
+    this.updateNumChildren = this.updateNumChildren.bind(this);
+    this.updateNumInfants = this.updateNumInfants.bind(this);
   }
 
-  toggleGuestsDropdown() {
-    this.setState({ isGuestsOpen: !this.state.isGuestsOpen });
+  toggleCheckinDropdown(e) {
+    e.preventDefault();
+    const { isCheckinOpen } = this.state;
+    this.setState({ isCheckinOpen: !isCheckinOpen, isCheckoutOpen: false });
+  }
+
+  toggleCheckoutDropdown(e) {
+    e.preventDefault();
+    const { isCheckoutOpen } = this.state;
+    this.setState({ isCheckoutOpen: !isCheckoutOpen, isCheckinOpen: false });
+  }
+
+  toggleGuestsDropdown(e) {
+    e.preventDefault();
+    const { isGuestsOpen } = this.state;
+    this.setState({ isGuestsOpen: !isGuestsOpen });
+  }
+
+  updateCalendarMonth(value) {
+    const { calendarMonth } = this.state;
+    this.setState({ calendarMonth: calendarMonth.add(value, 'months') });
+  }
+
+  updateCheckinDate(e) {
+    this.setState({ checkinValue: e.target.value });
+  }
+
+  updateCheckoutDate(e) {
+    this.setState({ checkoutValue: e.target.value });
   }
 
   updateNumAdults(value) {
-    this.setState(prev => {
-      return {
-        numAdults: prev.numAdults += value
-      };
-    });
+    this.setState(({ numAdults }) => ({ numAdults: numAdults += value }));
   }
 
   updateNumChildren(value) {
-    this.setState(prev => {
-      return {
-        numChildren: prev.numChildren += value
-      };
-    });
+    this.setState(({ numChildren }) => ({ numChildren: numChildren += value }));
   }
 
   updateNumInfants(value) {
-    this.setState(prev => {
-      return {
-        numInfants: prev.numInfants += value
-      };
-    });
+    this.setState(({ numInfants }) => ({ numInfants: numInfants += value }));
   }
 
   render() {
-    return <StyledBooking>
-      <CloseButton />
-      <Price />
-      <Reviews numReviews={this.state.numReviews} rating={this.state.rating} />
-      <StyledBreak />
-      <Dates />
-      <Guests isOpen={this.state.isGuestsOpen} toggle={this.toggleGuestsDropdown.bind(this)} numAdults={this.state.numAdults} numChildren={this.state.numChildren} numInfants={this.state.numInfants} updateNumAdults={this.updateNumAdults.bind(this)} updateNumChildren={this.updateNumChildren.bind(this)} updateNumInfants={this.updateNumInfants.bind(this)}/>
-      <Book />
-      <StyledBreak />
-      <Info numViews={this.state.numViews}/>
-      <Report />      
-    </StyledBooking>;
+    const {
+      numReviews, rating, isCheckinOpen, isCheckoutOpen, isGuestsOpen, numAdults,
+      numChildren, numInfants, numViews, calendarMonth, checkinValue, checkoutValue,
+    } = this.state;
+
+    return (
+      <StyledBooking>
+        <CloseButton />
+        <Price />
+        <Reviews numReviews={numReviews} rating={rating} />
+        <StyledBreak />
+        <Dates
+          isCheckinOpen={isCheckinOpen}
+          isCheckoutOpen={isCheckoutOpen}
+          calendarMonth={calendarMonth}
+          updateCalendarMonth={this.updateCalendarMonth}
+          updateCheckinDate={this.updateCheckinDate}
+          updateCheckoutDate={this.updateCheckoutDate}
+          checkinValue={checkinValue}
+          checkoutValue={checkoutValue}
+          toggleCheckinDropdown={this.toggleCheckinDropdown}
+          toggleCheckoutDropdown={this.toggleCheckoutDropdown}
+        />
+        <Guests
+          isOpen={isGuestsOpen}
+          toggle={this.toggleGuestsDropdown}
+          numAdults={numAdults}
+          numChildren={numChildren}
+          numInfants={numInfants}
+          updateNumAdults={this.updateNumAdults}
+          updateNumChildren={this.updateNumChildren}
+          updateNumInfants={this.updateNumInfants}
+        />
+        <Book />
+        <StyledBreak />
+        <Info numViews={numViews} />
+        <Report />
+      </StyledBooking>
+    );
   }
 }
 

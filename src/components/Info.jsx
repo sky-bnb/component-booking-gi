@@ -11,6 +11,8 @@ const StyledHomeAndViews = styled.div`
 `;
 
 const StyledLightbulb = styled.img`
+  height: 50px;
+  width: 50px;
 `;
 
 const StyledHomeMindsText = styled.div`
@@ -33,26 +35,22 @@ const StyledHomeViewedText = styled.div`
   color: #484848;
 `;
 
-const StyledHomeMinds = styled.div`
-  font-weight: bold;
-`;
+const Info = (props) => {
+  const { numViews } = props;
 
-const StyledHomeViewedText = styled.div`
-`;
-
-const Info = (props) => (
-  <StyledInfo>
-    <StyledHomeAndViews>
-<<<<<<< HEAD
-      <StyledHomeMindsText>This home is on people's minds.</StyledHomeMindsText>
-      <StyledHomeViewedText>It's been viewed {props.numViews}+ times in the past week.</StyledHomeViewedText>
-=======
-      <StyledHomeMinds>This home is on people's minds.</StyledHomeMinds>
-      <StyledHomeViewedText>This home has been viewed {props.numViews} times in the past week.</StyledHomeViewedText>
->>>>>>> master
-    </StyledHomeAndViews>
-    <StyledLightbulb src="lightbulb.gif" alt="lightbulb animation" />
-  </StyledInfo>
-);
+  return (
+    <StyledInfo>
+      <StyledHomeAndViews>
+        <StyledHomeMindsText>This home is on people's minds.</StyledHomeMindsText>
+        <StyledHomeViewedText>
+          It's been viewed
+          {numViews > 500 ? ' 500+ ' : ` ${numViews} `}
+          times in the past week.
+        </StyledHomeViewedText>
+      </StyledHomeAndViews>
+      <StyledLightbulb src="lightbulb.gif" alt="lightbulb animation" />
+    </StyledInfo>
+  );
+};
 
 export default Info;

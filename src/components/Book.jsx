@@ -58,7 +58,7 @@ const StyledChargeText = styled.div`
   -webkit-font-smoothing: antialiased;
 `;
 
-const Book = (props) => (
+const Book = () => (
   <StyledBookForm>
     <StyledBookButton>
       <StyledButtonText>Book</StyledButtonText>
