@@ -40,7 +40,10 @@ const buildMonth = (firstDayOfMonth, daysInMonth) => {
 };
 
 const Calendar = (props) => {
-  const { calendarMonth, firstDayOfMonth, daysInMonth, available, isCheckinOpen, isCheckoutOpen } = props;
+  const {
+    calendarMonth, firstDayOfMonth, daysInMonth, available, isCheckinOpen, isCheckoutOpen,
+    updateCheckinDate, updateCheckoutDate, checkinValue, checkoutValue,
+  } = props;
 
   return (
     <StyledCalendar>
@@ -53,6 +56,10 @@ const Calendar = (props) => {
               isBlank={isBlank}
               isCheckinOpen={isCheckinOpen}
               isCheckoutOpen={isCheckoutOpen}
+              checkinValue={checkinValue}
+              checkoutValue={checkoutValue}
+              updateCheckinDate={updateCheckinDate}
+              updateCheckoutDate={updateCheckoutDate}
             />);
           })}
         </StyledRow>) }</tbody>

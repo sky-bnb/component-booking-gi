@@ -105,7 +105,9 @@ const StyledQuestionMark = styled.span`
 `;
 
 const DatesDropdown = (props) => {
-  const { calendarMonth, updateCalendarMonth, available, isCheckinOpen, isCheckoutOpen } = props;
+  const {
+    calendarMonth, updateCalendarMonth, available, isCheckinOpen, isCheckoutOpen, updateCheckinDate, updateCheckoutDate, checkinValue, checkoutValue,
+  } = props;
 
   const firstDayOfMonth = Number(calendarMonth.startOf('month').format('d'));
   const daysInMonth = Number(calendarMonth.endOf('month').format('D'));
@@ -141,6 +143,10 @@ const DatesDropdown = (props) => {
         available={available}
         isCheckinOpen={isCheckinOpen}
         isCheckoutOpen={isCheckoutOpen}
+        checkinValue={checkinValue}
+        checkoutValue={isCheckoutOpen}
+        updateCheckinDate={updateCheckinDate}
+        updateCheckoutDate={updateCheckoutDate}
       />
       <StyledQuestionButton />
       <StyledQuestionMark>?</StyledQuestionMark>

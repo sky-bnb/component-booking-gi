@@ -114,9 +114,13 @@ const Dates = (props) => {
       {isCheckinOpen || isCheckoutOpen ? <DatesDropdown
         isCheckinOpen={isCheckinOpen}
         isCheckoutOpen={isCheckoutOpen}
+        checkinValue={checkinValue}
+        checkoutValue={checkoutValue}
         calendarMonth={calendarMonth}
         updateCalendarMonth={updateCalendarMonth}
         available={available}
+        updateCheckinDate={updateCheckinDate}
+        updateCheckoutDate={updateCheckoutDate}
         /> : null}
     </StyledDates>
   );
