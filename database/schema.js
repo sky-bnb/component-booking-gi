@@ -12,7 +12,7 @@ const BookingSchema = new mongoose.Schema({
   numViews: Number,
   minStay: Number,
   maxStay: Number,
-  available: [Date],
+  available: [String],
 });
 
 const Booking = mongoose.model('Booking', BookingSchema);

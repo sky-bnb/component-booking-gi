@@ -11,9 +11,9 @@ const StyledGuestsButton = styled.button`
   width: 100%;
   background: rgb(255, 255, 255);
   border-color: rgb(235, 235, 235);
-  border-bottom-color: ${props => props.isOpen ? 'rgb(0, 132, 137)' : 'rgb(235, 235, 235)'};
+  border-bottom-color: ${ ({ isOpen }) => isOpen ? 'rgb(0, 132, 137)' : 'rgb(235, 235, 235)'};
   border-bottom-style: solid;
-  border-width: ${props => props.isOpen ? '1px 1px 2px 1px' : '1px'};
+  border-width: ${({ isOpen }) => isOpen ? '1px 1px 2px 1px' : '1px'};
   border-radius: 2px;
   padding: 8px;
   border-style: solid;
@@ -22,13 +22,16 @@ const StyledGuestsButton = styled.button`
 const StyledNumGuestsLabel = styled.label`
   font-size: 17px;
   margin-left: 8px;
-  padding: 0;
+  padding: ${({ isOpen }) => isOpen ? '4px 8px 4px 8px' : '0px'};
   color: rgb(72. 72. 72);
   font-weight: 400;
+  background: ${({ isOpen }) => isOpen ? 'rgb(153, 237, 230)' : 'rgb(255, 255, 255)'};
+  border-color: ${({ isOpen }) => isOpen ? 'rgb(153, 237, 230)' : 'rgb(255, 255, 255)'};
+  border-radius: 3px;
 `;
 
 const StyledSVG = styled.svg`
-  height: 30.4px;
+  height: 16px;
   width: 16px;
   display: block;
   fill: rgb(72. 72. 72);
@@ -39,7 +42,7 @@ const GuestsButton = (props) => {
   const { toggle, isOpen, numAdults, numChildren, numInfants } = props;
   return (
     <StyledGuestsButton type="button" onClick={toggle} isOpen={isOpen}>
-      <StyledNumGuestsLabel>
+      <StyledNumGuestsLabel isOpen={isOpen}>
         {numAdults + numChildren}
         {numAdults + numChildren === 1 ? ' guest' : ' guests'}
         {numInfants === 0 ? null : (numInfants === 1 ? ', 1 infant' : `, ${numInfants} infants`)}

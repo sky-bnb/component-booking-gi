@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledInfo = styled.div`
-  width: 326px;
-  height: 60px;
   display: flex;
+  justify-content: space-between;
+  width: 100%
+  height: 60px;
 `;
 
 const StyledHomeAndViews = styled.div`

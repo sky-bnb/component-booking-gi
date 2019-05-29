@@ -4,8 +4,6 @@ const { db } = require('./index.js');
 const Booking = require('./schema.js');
 
 const randomNumber = (min, max) => Math.floor(Math.random() * (max + 1 - min) + min);
-const currentDate = moment().format('YYYY-MM-DD');
-const threeMonthsAhead = moment().month(new Date().getMonth() + 3).format('YYYY-MM-DD');
 const bookingPromiseArr = [];
 
 db.dropDatabase(() => {
@@ -15,7 +13,7 @@ db.dropDatabase(() => {
     const dateArr = [];
 
     for (let j = 0; j < randomNumber(30, 70); j += 1) {
-      dateSet.add(moment(faker.date.between(currentDate, threeMonthsAhead)).format('YYYY-MM-DD'));
+      dateSet.add(moment().add(randomNumber(1, 90), 'days').format('YYYY-MM-DD').toString());
     }
 
     dateSet.forEach(element => dateArr.push(element));

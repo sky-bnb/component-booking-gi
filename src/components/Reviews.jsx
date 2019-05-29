@@ -41,7 +41,7 @@ const StyledBlueStars = styled.div`
 
 const StyledAvgRatingForeground = styled.div`
   height: 10px;
-  width: ${props => (props.rating / 5 * 50).toString().concat('px')};
+  width: ${({ avgRating }) => (avgRating / 5 * 50).toString().concat('px')};
   position: absolute;
   top: 0px;
   left: 0px;
@@ -58,13 +58,13 @@ const StyledNumReviews = styled.div`
 `;
 
 const Reviews = (props) => {
-  const { rating, numReviews } = props;
+  const { avgRating, numReviews } = props;
 
   return (
     <StyledReviewsWrapper>
       <StyledReviewsButton>
         <StyledGreyStars>
-          <StyledAvgRatingForeground rating={rating}><StyledBlueStars /></StyledAvgRatingForeground>
+          <StyledAvgRatingForeground avgRating={avgRating}><StyledBlueStars /></StyledAvgRatingForeground>
         </StyledGreyStars>
         <StyledNumReviews>{numReviews}</StyledNumReviews>
       </StyledReviewsButton>

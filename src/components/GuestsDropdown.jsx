@@ -80,23 +80,20 @@ const StyledMinusCounterPlusWrapper = styled.div`
 const StyledButton = styled.button`
   border-style: initial;
   border-style: solid;
-  border-color: rgb(0, 132, 137);
+  border-color: ${({ isActive }) => isActive ? 'rgb(0, 132, 137)' : 'rgba(0, 132, 137, 0.3)'};
   border-radius: 100%;
   border-width: 1px;
-  color: rgb(0, 132, 137);
-  cursor: pointer;
+  color: ${({ isActive }) => isActive ? 'rgb(0, 132, 137)' : 'rgba(0, 132, 137, 0.3)'};
+  cursor: ${({ isActive }) => isActive ? 'pointer' : 'default'};
   outline: 0px;
   height: 32px;
   width: 32px;
-  cursor: pointer;
   display: block;
   
   :active {
-    box-shadow: rgb(0, 132, 137) 0 0 2px 2px;
+    box-shadow: ${({ isActive }) => isActive ? 'rgb(0, 132, 137) 0 0 2px 2px' : null};
   };
 `;
-
-// border-left-color: rgba(0, 132, 137, 0.3)
 
 const StyledSVG = styled.svg`
   height: 1.5em;
@@ -134,9 +131,16 @@ const StyledCounterText = styled.div`
 
 const GuestsDropdown = (props) => {
   const {
-    numAdults, numChildren, numInfants, toggle, updateNumAdults,
+    numAdults, numChildren, numInfants, guestMax, maxInfants, toggle, updateNumAdults,
     updateNumChildren, updateNumInfants,
   } = props;
+
+  const isAdultMinusActive = numAdults > 1;
+  const isAdultPlusActive = numAdults + numChildren < guestMax;
+  const isChildrenMinusActive = numChildren > 0;
+  const isChildrenPlusActive = numAdults + numChildren < guestMax;
+  const isInfantsMinusActive = numInfants > 0;
+  const isInfantsPlusActive = numInfants < maxInfants;
 
   return (
     <StyledGuestsDropdown>
@@ -144,11 +148,11 @@ const GuestsDropdown = (props) => {
         <StyledAdultRow>
           <StyledMenuText>Adults</StyledMenuText>
           <StyledMinusCounterPlusWrapper>
-            <StyledButton onClick={() => updateNumAdults(-1)}>
+            <StyledButton isActive={isAdultMinusActive} onClick={() => isAdultMinusActive ? updateNumAdults(-1) : null}>
               <StyledSVG viewBox="0 0 24 24" role="img" focusable="false"><rect height="2" rx="1" width="12" x="6" y="11" /></StyledSVG>
             </StyledButton>
             <StyledCounterText>{numAdults}</StyledCounterText>
-            <StyledButton onClick={() => updateNumAdults(1)}>
+            <StyledButton isActive={isAdultPlusActive} onClick={() => isAdultPlusActive ? updateNumAdults(1) : null}>
               <StyledSVG viewBox="0 0 24 24" role="img" focusable="false">
                 <rect height="2" rx="1" width="12" x="6" y="11" />
                 <rect height="12" rx="1" width="2" x="11" y="6" />
@@ -162,13 +166,13 @@ const GuestsDropdown = (props) => {
             <StyledSubMenuText>Ages 2-12</StyledSubMenuText>
           </StyledTextWrapper>
           <StyledMinusCounterPlusWrapper>
-            <StyledButton onClick={() => updateNumChildren(-1)}>
+            <StyledButton isActive={isChildrenMinusActive} onClick={() => isChildrenMinusActive ? updateNumChildren(-1) : null}>
               <StyledSVG viewBox="0 0 24 24" role="img" focusable="false">
                 <rect height="2" rx="1" width="12" x="6" y="11" />
               </StyledSVG>
             </StyledButton>
             <StyledCounterText>{numChildren}</StyledCounterText>
-            <StyledButton onClick={() => updateNumChildren(1)}>
+            <StyledButton isActive={isChildrenPlusActive} onClick={() => isChildrenPlusActive ? updateNumChildren(1) : null}>
               <StyledSVG viewBox="0 0 24 24" role="img" focusable="false">
                 <rect height="2" rx="1" width="12" x="6" y="11" />
                 <rect height="12" rx="1" width="2" x="11" y="6" />
@@ -182,13 +186,13 @@ const GuestsDropdown = (props) => {
             <StyledSubMenuText>Under 2</StyledSubMenuText>
           </StyledTextWrapper>
           <StyledMinusCounterPlusWrapper>
-            <StyledButton onClick={() => updateNumInfants(-1)}>
+            <StyledButton isActive={isInfantsMinusActive} onClick={() => isInfantsMinusActive ? updateNumInfants(-1) : null}>
               <StyledSVG viewBox="0 0 24 24" role="img" focusable="false">
                 <rect height="2" rx="1" width="12" x="6" y="11" />
               </StyledSVG>
             </StyledButton>
             <StyledCounterText>{numInfants}</StyledCounterText>
-            <StyledButton onClick={() => updateNumInfants(1)}>
+            <StyledButton isActive={isInfantsPlusActive} onClick={() => isInfantsPlusActive ? updateNumInfants(1) : null}>
               <StyledSVG viewBox="0 0 24 24" role="img" focusable="false">
                 <rect height="2" rx="1" width="12" x="6" y="11" />
                 <rect height="12" rx="1" width="2" x="11" y="6" />
@@ -198,7 +202,7 @@ const GuestsDropdown = (props) => {
         </StyledInfantRow>
         <StyledClosingWrapper>
           <StyledGuestMaxText>
-            2 guests maximum. Infants don't count toward the number of guests.
+            {guestMax} {guestMax === 1 ? 'guest' : 'guests'} maximum. Infants don't count toward the number of guests.
           </StyledGuestMaxText>
           <StyledCloseButton onClick={toggle}>Close</StyledCloseButton>
         </StyledClosingWrapper>

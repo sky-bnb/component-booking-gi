@@ -20,7 +20,7 @@ const StyledGuestsLabel = styled.label`
 
 const Guests = (props) => {
   const {
-    isOpen, toggle, numAdults, numChildren, numInfants,
+    isOpen, toggle, numAdults, numChildren, numInfants, guestMax, maxInfants,
     updateNumAdults, updateNumChildren, updateNumInfants,
   } = props;
 
@@ -40,6 +40,8 @@ const Guests = (props) => {
           numAdults={numAdults}
           numChildren={numChildren}
           numInfants={numInfants}
+          guestMax={guestMax}
+          maxInfants={maxInfants}
           updateNumAdults={updateNumAdults}
           updateNumChildren={updateNumChildren}
           updateNumInfants={updateNumInfants}
