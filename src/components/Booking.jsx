@@ -11,13 +11,19 @@ import Book from './Book.jsx';
 import Info from './Info.jsx';
 import Report from './Report.jsx';
 
+const StyledStickyModule = styled.div`
+  position: sticky;
+  top: 20px;
+`
+
 const StyledBooking = styled.div`
   padding: 16px 24px 24px 24px;
   width: 90%;
-  height: 462px;
-  margin: 0px;
+  height: 464px;
+  margin: 0px auto;
   border: 1px solid #e4e4e4;
   font-family: 'Quicksand', sans-serif;
+  box-sizing: border-box;
 `;
 
 const StyledBreak = styled.div`
@@ -74,7 +80,7 @@ class Booking extends React.Component {
 
   getData() {
     const randomNum = Math.floor(Math.random() * 100) + 101;
-    axios.get(`/host/${randomNum}`)
+    axios.get(`http://127.0.0.1:3004/host/${randomNum}`)
       .then(({ data }) => {
         const {
           _id, ownerName, guestMax, price, cleaningFee, occupancyFee, avgRating, numReviews, numViews, minstay, maxStay, available
@@ -148,41 +154,43 @@ class Booking extends React.Component {
     } = this.state;
 
     return (
-      <StyledBooking>
-        <CloseButton />
-        <Price price={price} />
-        <Reviews numReviews={numReviews} avgRating={avgRating} />
-        <StyledBreak />
-        <Dates
-          isCheckinOpen={isCheckinOpen}
-          isCheckoutOpen={isCheckoutOpen}
-          calendarMonth={calendarMonth}
-          updateCalendarMonth={this.updateCalendarMonth}
-          updateCheckinDate={this.updateCheckinDate}
-          updateCheckoutDate={this.updateCheckoutDate}
-          checkinValue={checkinValue}
-          checkoutValue={checkoutValue}
-          toggleCheckinDropdown={this.toggleCheckinDropdown}
-          toggleCheckoutDropdown={this.toggleCheckoutDropdown}
-          available={available}
-        />
-        <Guests
-          isOpen={isGuestsOpen}
-          toggle={this.toggleGuestsDropdown}
-          numAdults={numAdults}
-          numChildren={numChildren}
-          numInfants={numInfants}
-          guestMax={guestMax}
-          maxInfants={maxInfants}
-          updateNumAdults={this.updateNumAdults}
-          updateNumChildren={this.updateNumChildren}
-          updateNumInfants={this.updateNumInfants}
-        />
-        <Book />
-        <StyledBreak />
-        <Info numViews={numViews} />
+      <StyledStickyModule>
+        <StyledBooking>
+          {/* <CloseButton /> */}
+          <Price price={price} />
+          <Reviews numReviews={numReviews} avgRating={avgRating} />
+          <StyledBreak />
+          <Dates
+            isCheckinOpen={isCheckinOpen}
+            isCheckoutOpen={isCheckoutOpen}
+            calendarMonth={calendarMonth}
+            updateCalendarMonth={this.updateCalendarMonth}
+            updateCheckinDate={this.updateCheckinDate}
+            updateCheckoutDate={this.updateCheckoutDate}
+            checkinValue={checkinValue}
+            checkoutValue={checkoutValue}
+            toggleCheckinDropdown={this.toggleCheckinDropdown}
+            toggleCheckoutDropdown={this.toggleCheckoutDropdown}
+            available={available}
+          />
+          <Guests
+            isOpen={isGuestsOpen}
+            toggle={this.toggleGuestsDropdown}
+            numAdults={numAdults}
+            numChildren={numChildren}
+            numInfants={numInfants}
+            guestMax={guestMax}
+            maxInfants={maxInfants}
+            updateNumAdults={this.updateNumAdults}
+            updateNumChildren={this.updateNumChildren}
+            updateNumInfants={this.updateNumInfants}
+          />
+          <Book />
+          <StyledBreak />
+          <Info numViews={numViews} />
+        </StyledBooking>
         <Report />
-      </StyledBooking>
+      </StyledStickyModule>
     );
   }
 }

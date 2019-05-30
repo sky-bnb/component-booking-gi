@@ -28,6 +28,7 @@
   "homepage": "https://github.com/sky-bnb/component-booking-gi#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "faker": "^4.1.0",
     "moment": "^2.24.0",
