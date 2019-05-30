@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const StyledReport = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 40px;
+  padding-top: 15px;
 `;
 
 const StyledReportWrapper = styled.div`

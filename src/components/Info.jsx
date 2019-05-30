@@ -49,7 +49,7 @@ const Info = (props) => {
           times in the past week.
         </StyledHomeViewedText>
       </StyledHomeAndViews>
-      <StyledLightbulb src="lightbulb.gif" alt="lightbulb animation" />
+      <StyledLightbulb src="http://127.0.0.1:3004/lightbulb.gif" alt="lightbulb animation" />
     </StyledInfo>
   );
 };
