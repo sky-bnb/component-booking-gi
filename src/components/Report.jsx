@@ -27,6 +27,7 @@ const StyledSVG = styled.svg`
 const StyledReportText = styled.div`
   color: #484848;
   font-size: 14px;
+  font-family: 'Quicksand', sans-serif;
 `;
 
 const Report = () => (

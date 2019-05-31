@@ -14,11 +14,10 @@ COPY package*.json ./
 COPY . .
 
 # Does your app have any dependencies that should be installed?
-RUN npm install
+RUN npm install --production
 
 # What port will the container talk to the outside world with once created?
 EXPOSE 3004
 
 # How do you start your app?
-CMD [ "node", "./database/seedData.js" ]
-CMD [ "node", "./server/server.js" ]
+CMD [ "npm", "run", "dockerize" ]
