@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Booking Component matches the snapshot 1`] = `
+<Booking__StyledStickyModule>
+  <Booking__StyledBooking>
+    <Price
+      price={0}
+    />
+    <Reviews
+      avgRating={0}
+      numReviews={0}
+    />
+    <Booking__StyledBreak />
+    <Dates
+      available={Array []}
+      calendarMonth="2019-11-08T19:28:54.467Z"
+      checkinValue=""
+      checkoutValue=""
+      isCheckinOpen={false}
+      isCheckoutOpen={false}
+      toggleCheckinDropdown={[Function]}
+      toggleCheckoutDropdown={[Function]}
+      updateCalendarMonth={[Function]}
+      updateCheckinDate={[Function]}
+      updateCheckoutDate={[Function]}
+    />
+    <Guests
+      guestMax={0}
+      isOpen={false}
+      maxInfants={5}
+      numAdults={1}
+      numChildren={0}
+      numInfants={0}
+      toggle={[Function]}
+      updateNumAdults={[Function]}
+      updateNumChildren={[Function]}
+      updateNumInfants={[Function]}
+    />
+    <Book />
+    <Booking__StyledBreak />
+    <Info
+      numViews={0}
+    />
+  </Booking__StyledBooking>
+  <Report />
+</Booking__StyledStickyModule>
+`;
