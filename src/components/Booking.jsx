@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import moment from 'moment';
 import axios from 'axios';
+
 import CloseButton from './CloseButton.jsx';
 import Price from './Price.jsx';
 import Reviews from './Reviews.jsx';
@@ -11,7 +12,7 @@ import Book from './Book.jsx';
 import Info from './Info.jsx';
 import Report from './Report.jsx';
 
-const StyledStickyModule = styled.div`
+export const StyledStickyModule = styled.div`
   position: sticky;
   top: 20px;
 `
