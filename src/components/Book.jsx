@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledBookForm = styled.form`
+export const StyledBookForm = styled.form`
 `;
 
 const StyledBookButton = styled.button`

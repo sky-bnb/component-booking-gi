@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Book Component matches the snapshot 1`] = `
+<Book__StyledBookForm>
+  <Book__StyledBookButton>
+    <Book__StyledButtonText>
+      Book
+    </Book__StyledButtonText>
+  </Book__StyledBookButton>
+  <Book__StyledChargeText>
+    You won't be charged yet
+  </Book__StyledChargeText>
+</Book__StyledBookForm>
+`;
