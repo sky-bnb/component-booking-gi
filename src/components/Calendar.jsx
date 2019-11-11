@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Day from './Day.jsx';
 
-const StyledCalendar = styled.table`
+export const StyledCalendar = styled.table`
   padding: 0px 10px;
   border-collapse: collapse;
   display: flex;

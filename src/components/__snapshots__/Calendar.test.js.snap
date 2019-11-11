@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calendar Component matches the snapshot 1`] = `
+<Calendar__StyledCalendar>
+  <tbody>
+    <Calendar__StyledRow
+      key="0"
+    >
+      <Day
+        date={null}
+        isBlank={true}
+        key="0"
+      />
+      <Day
+        date={null}
+        isBlank={true}
+        key="1"
+      />
+      <Day
+        date={null}
+        isBlank={true}
+        key="2"
+      />
+      <Day
+        date={null}
+        isBlank={true}
+        key="3"
+      />
+      <Day
+        date={null}
+        isBlank={true}
+        key="4"
+      />
+      <Day
+        date={null}
+        isBlank={true}
+        key="5"
+      />
+      <Day
+        date={null}
+        isBlank={true}
+        key="6"
+      />
+    </Calendar__StyledRow>
+  </tbody>
+</Calendar__StyledCalendar>
+`;
