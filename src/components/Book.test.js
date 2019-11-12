@@ -8,7 +8,7 @@ describe('Book Component', () => {
   let wrapper;
   beforeEach(() => wrapper = shallow(<Book />));
 
-  it('renders the Booking element', () => {
+  it('renders the Book component', () => {
     expect(wrapper.find(StyledBookForm).length).toBe(1);
   });
 

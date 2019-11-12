@@ -8,7 +8,7 @@ describe('Booking Component', () => {
   let wrapper;
   beforeEach(() => wrapper = shallow(<Booking />));
 
-  it('renders the Booking element', () => {
+  it('renders the Booking component', () => {
     expect(wrapper.find(StyledStickyModule).length).toBe(1);
   });
 

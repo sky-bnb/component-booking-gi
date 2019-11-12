@@ -2,14 +2,14 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
-import Calendar, { StyledCalendar } from './Calendar.jsx';
+import CloseButton, { StyledCloseButtonWrapper } from './CloseButton.jsx';
 
 describe('Calendar Component', () => {
   let wrapper;
-  beforeEach(() => wrapper = shallow(<Calendar />));
+  beforeEach(() => wrapper = shallow(<CloseButton />));
 
-  it('renders the Calendar component', () => {
-    expect(wrapper.find(StyledCalendar).length).toBe(1);
+  it('renders the CloseButton component', () => {
+    expect(wrapper.find(StyledCloseButtonWrapper).length).toBe(1);
   });
 
   it('matches the snapshot', () => {

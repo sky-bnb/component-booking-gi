@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledCloseButtonWrapper = styled.div`
+export const StyledCloseButtonWrapper = styled.div`
   margin: 0px 0px 24px;
 `;
 
