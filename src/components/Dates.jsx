@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import DatesDropdown from './DatesDropdown.jsx';
 
-const StyledDates = styled.div`
+export const StyledDates = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 16px;
