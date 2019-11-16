@@ -9,10 +9,17 @@ exports[`Dates Component matches the snapshot 1`] = `
     <Dates__StyledDatesRow>
       <Dates__StyledDateCell>
         <Dates__StyledDateInput
+          onChange={[Function]}
+          onClick={[Function]}
           placeholder="Check-in"
           type="text"
+          value=""
         />
-        <Dates__StyledHighlight />
+        <Dates__StyledHighlight
+          isCheckinOpen={false}
+        >
+          Check-in
+        </Dates__StyledHighlight>
       </Dates__StyledDateCell>
       <Dates__StyledSVGWrapper>
         <Dates__StyledSVG
@@ -28,10 +35,17 @@ exports[`Dates Component matches the snapshot 1`] = `
       </Dates__StyledSVGWrapper>
       <Dates__StyledDateCell>
         <Dates__StyledDateInput
+          onChange={[Function]}
+          onClick={[Function]}
           placeholder="Checkout"
           type="text"
+          value=""
         />
-        <Dates__StyledHighlight />
+        <Dates__StyledHighlight
+          isCheckoutOpen={false}
+        >
+          Checkout
+        </Dates__StyledHighlight>
       </Dates__StyledDateCell>
     </Dates__StyledDatesRow>
   </Dates__StyledDatesBox>
