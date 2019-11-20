@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reviews Component matches the snapshot 1`] = `
+<Reviews__StyledReviews>
+  <Reviews__StyledReviewsButton>
+    <Reviews__StyledGreyStars>
+      <Reviews__StyledAvgRatingForeground
+        avgRating={0}
+      >
+        <Reviews__StyledBlueStars />
+      </Reviews__StyledAvgRatingForeground>
+    </Reviews__StyledGreyStars>
+    <Reviews__StyledNumReviews>
+      0
+    </Reviews__StyledNumReviews>
+  </Reviews__StyledReviewsButton>
+</Reviews__StyledReviews>
+`;

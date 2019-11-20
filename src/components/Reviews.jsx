@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledReviewsWrapper = styled.div`
+export const StyledReviews = styled.div`
   display: flex;
   width: 100%;
 `;
@@ -61,14 +61,14 @@ const Reviews = (props) => {
   const { avgRating, numReviews } = props;
 
   return (
-    <StyledReviewsWrapper>
+    <StyledReviews>
       <StyledReviewsButton>
         <StyledGreyStars>
           <StyledAvgRatingForeground avgRating={avgRating}><StyledBlueStars /></StyledAvgRatingForeground>
         </StyledGreyStars>
         <StyledNumReviews>{numReviews}</StyledNumReviews>
       </StyledReviewsButton>
-    </StyledReviewsWrapper>
+    </StyledReviews>
   );
 };
 
