@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledReport = styled.div`
+export const StyledReport = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 15px;
