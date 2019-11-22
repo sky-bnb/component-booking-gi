@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledPrice = styled.div`
+export const StyledPrice = styled.div`
   display: flex;
   line-height: 10px;
   padding: 0px 16px 0px 0px;
