@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Info Component matches the snapshot 1`] = `
+<Info__StyledInfo>
+  <Info__StyledHomeAndViews>
+    <Info__StyledHomeMindsText>
+      This home is on people's minds.
+    </Info__StyledHomeMindsText>
+    <Info__StyledHomeViewedText>
+      It's been viewed
+       undefined 
+      times in the past week.
+    </Info__StyledHomeViewedText>
+  </Info__StyledHomeAndViews>
+  <Info__StyledLightbulb
+    alt="lightbulb animation"
+    src="http://127.0.0.1:3004/lightbulb.gif"
+  />
+</Info__StyledInfo>
+`;
