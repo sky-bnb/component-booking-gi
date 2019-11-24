@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GuestsDropdown Component matches the snapshot 1`] = `
+<GuestsDropdown__StyledGuestsDropdown>
+  <GuestsDropdown__StyledGuestsMenuWrapper>
+    <GuestsDropdown__StyledAdultRow>
+      <GuestsDropdown__StyledMenuText>
+        Adults
+      </GuestsDropdown__StyledMenuText>
+      <GuestsDropdown__StyledMinusCounterPlusWrapper>
+        <GuestsDropdown__StyledButton
+          isActive={false}
+          onClick={[Function]}
+        >
+          <GuestsDropdown__StyledSVG
+            focusable="false"
+            role="img"
+            viewBox="0 0 24 24"
+          >
+            <rect
+              height="2"
+              rx="1"
+              width="12"
+              x="6"
+              y="11"
+            />
+          </GuestsDropdown__StyledSVG>
+        </GuestsDropdown__StyledButton>
+        <GuestsDropdown__StyledCounterText />
+        <GuestsDropdown__StyledButton
+          isActive={false}
+          onClick={[Function]}
+        >
+          <GuestsDropdown__StyledSVG
+            focusable="false"
+            role="img"
+            viewBox="0 0 24 24"
+          >
+            <rect
+              height="2"
+              rx="1"
+              width="12"
+              x="6"
+              y="11"
+            />
+            <rect
+              height="12"
+              rx="1"
+              width="2"
+              x="11"
+              y="6"
+            />
+          </GuestsDropdown__StyledSVG>
+        </GuestsDropdown__StyledButton>
+      </GuestsDropdown__StyledMinusCounterPlusWrapper>
+    </GuestsDropdown__StyledAdultRow>
+    <GuestsDropdown__StyledChildrenRow>
+      <GuestsDropdown__StyledTextWrapper>
+        <GuestsDropdown__StyledMenuText>
+          Children
+        </GuestsDropdown__StyledMenuText>
+        <GuestsDropdown__StyledSubMenuText>
+          Ages 2-12
+        </GuestsDropdown__StyledSubMenuText>
+      </GuestsDropdown__StyledTextWrapper>
+      <GuestsDropdown__StyledMinusCounterPlusWrapper>
+        <GuestsDropdown__StyledButton
+          isActive={false}
+          onClick={[Function]}
+        >
+          <GuestsDropdown__StyledSVG
+            focusable="false"
+            role="img"
+            viewBox="0 0 24 24"
+          >
+            <rect
+              height="2"
+              rx="1"
+              width="12"
+              x="6"
+              y="11"
+            />
+          </GuestsDropdown__StyledSVG>
+        </GuestsDropdown__StyledButton>
+        <GuestsDropdown__StyledCounterText />
+        <GuestsDropdown__StyledButton
+          isActive={false}
+          onClick={[Function]}
+        >
+          <GuestsDropdown__StyledSVG
+            focusable="false"
+            role="img"
+            viewBox="0 0 24 24"
+          >
+            <rect
+              height="2"
+              rx="1"
+              width="12"
+              x="6"
+              y="11"
+            />
+            <rect
+              height="12"
+              rx="1"
+              width="2"
+              x="11"
+              y="6"
+            />
+          </GuestsDropdown__StyledSVG>
+        </GuestsDropdown__StyledButton>
+      </GuestsDropdown__StyledMinusCounterPlusWrapper>
+    </GuestsDropdown__StyledChildrenRow>
+    <GuestsDropdown__StyledInfantRow>
+      <GuestsDropdown__StyledTextWrapper>
+        <GuestsDropdown__StyledMenuText>
+          Infants
+        </GuestsDropdown__StyledMenuText>
+        <GuestsDropdown__StyledSubMenuText>
+          Under 2
+        </GuestsDropdown__StyledSubMenuText>
+      </GuestsDropdown__StyledTextWrapper>
+      <GuestsDropdown__StyledMinusCounterPlusWrapper>
+        <GuestsDropdown__StyledButton
+          isActive={false}
+          onClick={[Function]}
+        >
+          <GuestsDropdown__StyledSVG
+            focusable="false"
+            role="img"
+            viewBox="0 0 24 24"
+          >
+            <rect
+              height="2"
+              rx="1"
+              width="12"
+              x="6"
+              y="11"
+            />
+          </GuestsDropdown__StyledSVG>
+        </GuestsDropdown__StyledButton>
+        <GuestsDropdown__StyledCounterText />
+        <GuestsDropdown__StyledButton
+          isActive={false}
+          onClick={[Function]}
+        >
+          <GuestsDropdown__StyledSVG
+            focusable="false"
+            role="img"
+            viewBox="0 0 24 24"
+          >
+            <rect
+              height="2"
+              rx="1"
+              width="12"
+              x="6"
+              y="11"
+            />
+            <rect
+              height="12"
+              rx="1"
+              width="2"
+              x="11"
+              y="6"
+            />
+          </GuestsDropdown__StyledSVG>
+        </GuestsDropdown__StyledButton>
+      </GuestsDropdown__StyledMinusCounterPlusWrapper>
+    </GuestsDropdown__StyledInfantRow>
+    <GuestsDropdown__StyledClosingWrapper>
+      <GuestsDropdown__StyledGuestMaxText>
+         
+        guests
+         maximum. Infants don't count toward the number of guests.
+      </GuestsDropdown__StyledGuestMaxText>
+      <GuestsDropdown__StyledCloseButton>
+        Close
+      </GuestsDropdown__StyledCloseButton>
+    </GuestsDropdown__StyledClosingWrapper>
+  </GuestsDropdown__StyledGuestsMenuWrapper>
+</GuestsDropdown__StyledGuestsDropdown>
+`;

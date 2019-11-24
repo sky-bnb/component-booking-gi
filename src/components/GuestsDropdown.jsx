@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledGuestsDropdown = styled.div`
+export const StyledGuestsDropdown = styled.div`
   position: absolute;
   margin: 0px 0px 16px;
   padding: 0px 16px 0px 16px;
