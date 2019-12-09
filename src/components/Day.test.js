@@ -3,45 +3,51 @@ import { shallow } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 import moment from 'moment';
 
-import DatesDropdown, { StyledDatesDropdown } from './DatesDropdown.jsx';
+import Day, { StyledDay } from './Day.jsx';
 
 const {
+  available,
+  calendarMonth,
+  date,
+  index,
+  isBlank,
   isCheckinOpen,
   isCheckoutOpen,
   checkinValue,
   checkoutValue,
-  calendarMonth,
-  updateCalendarMonth,
-  available,
   updateCheckinDate,
   updateCheckoutDate,
 } = {
+  available: ['2019-06-02', '2019-07-01'],
+  calendarMonth: moment(),
+  date: 1,
+  key: 1,
+  isBlank: false,
   isCheckinOpen: false,
   checkinValue: '',
   isCheckoutOpen: false,
   checkoutValue: '',
-  calendarMonth: moment(),
-  updateCalendarMonth: () => null,
-  available: true,
   updateCheckinDate: () => null,
   updateCheckoutDate: () => null,
 };
 
-describe('DatesDropdown Component', () => {
+describe('Day Component', () => {
   let wrapper;
-  beforeEach(() => wrapper = shallow(<DatesDropdown isCheckinOpen={isCheckinOpen}
+  beforeEach(() => wrapper = shallow(<Day available={available}
+    calendarMonth={calendarMonth}
+    date={date}
+    key={index}
+    isBlank={isBlank}
+    isCheckinOpen={isCheckinOpen}
     isCheckoutOpen={isCheckoutOpen}
     checkinValue={checkinValue}
     checkoutValue={checkoutValue}
-    calendarMonth={calendarMonth}
-    updateCalendarMonth={updateCalendarMonth}
-    available={available}
     updateCheckinDate={updateCheckinDate}
     updateCheckoutDate={updateCheckoutDate}
   />));
 
-  it('renders the DatesDropdown component', () => {
-    expect(wrapper.find(StyledDatesDropdown).length).toBe(1);
+  it('renders the Day component', () => {
+    expect(wrapper.find(StyledDay).length).toBe(1);
   });
 
   it('matches the snapshot', () => {

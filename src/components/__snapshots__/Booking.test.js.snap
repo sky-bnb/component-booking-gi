@@ -13,7 +13,14 @@ exports[`Booking Component matches the snapshot 1`] = `
     <Booking__StyledBreak />
     <Dates
       available={Array []}
-      calendarMonth="2019-11-08T19:28:54.467Z"
+      calendarMonth={
+        Object {
+          "add": [Function],
+          "endOf": [Function],
+          "format": [Function],
+          "startOf": [Function],
+        }
+      }
       checkinValue=""
       checkoutValue=""
       isCheckinOpen={false}

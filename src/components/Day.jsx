@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import moment from 'moment';
 
-const StyledDay = styled.td`
+export const StyledDay = styled.td`
   font-size: 14px;
   width: 37px;
   height: 37px;

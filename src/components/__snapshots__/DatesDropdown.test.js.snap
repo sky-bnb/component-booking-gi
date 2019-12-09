@@ -2,7 +2,7 @@
 
 exports[`DatesDropdown Component matches the snapshot 1`] = `
 <DatesDropdown__StyledDatesDropdown
-  numWeeks={1}
+  numWeeks={5}
 >
   <DatesDropdown__StyledCalendarHeader>
     <DatesDropdown__StyledMonthButton
@@ -21,7 +21,7 @@ exports[`DatesDropdown Component matches the snapshot 1`] = `
     </DatesDropdown__StyledMonthButton>
     <DatesDropdown__StyledMonthTitle>
       <strong>
-        1
+        2019-11
       </strong>
     </DatesDropdown__StyledMonthTitle>
     <DatesDropdown__StyledMonthButton
@@ -80,6 +80,7 @@ exports[`DatesDropdown Component matches the snapshot 1`] = `
     available={true}
     calendarMonth={
       Object {
+        "add": [Function],
         "endOf": [Function],
         "format": [Function],
         "startOf": [Function],
@@ -87,7 +88,7 @@ exports[`DatesDropdown Component matches the snapshot 1`] = `
     }
     checkinValue=""
     checkoutValue={false}
-    daysInMonth={1}
+    daysInMonth={31}
     firstDayOfMonth={1}
     isCheckinOpen={false}
     isCheckoutOpen={false}

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Day Component matches the snapshot 1`] = `
+<Day__StyledDay
+  checkinValue=""
+  checkoutValue=""
+  isActive={false}
+  isBlank={false}
+  isSelected={false}
+  onClick={[Function]}
+  value="2019-11-01"
+>
+  1
+</Day__StyledDay>
+`;
