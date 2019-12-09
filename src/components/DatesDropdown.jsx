@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Calendar from './Calendar.jsx';
 
-const StyledDatesDropdown = styled.div`
+export const StyledDatesDropdown = styled.div`
   width: 332px;
   height: ${({ numWeeks }) => numWeeks === 6 ? '367px' : '332px'};
   margin-top: 65px;
