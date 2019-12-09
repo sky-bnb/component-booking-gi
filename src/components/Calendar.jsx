@@ -52,7 +52,8 @@ const Calendar = (props) => {
           { week.map(({ date, isBlank }, index) => {
             return ( <Day available={available}
               calendarMonth={calendarMonth}
-              date={date} key={index}
+              date={date}
+              key={index}
               isBlank={isBlank}
               isCheckinOpen={isCheckinOpen}
               isCheckoutOpen={isCheckoutOpen}
