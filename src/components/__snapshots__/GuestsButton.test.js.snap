@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GuestsButton Component matches the snapshot 1`] = `
+<GuestsButton__StyledGuestsButton
+  isOpen={false}
+  type="button"
+>
+  <GuestsButton__StyledNumGuestsLabel
+    isOpen={false}
+  >
+    NaN
+     guests
+    , undefined infants
+  </GuestsButton__StyledNumGuestsLabel>
+  <GuestsButton__StyledSVG
+    focusable="false"
+    height="16px"
+    role="presentation"
+    viewBox="0 0 18 18"
+    width="16px"
+  >
+    <path
+      d="m16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z"
+      fillRule="evenodd"
+    />
+  </GuestsButton__StyledSVG>
+</GuestsButton__StyledGuestsButton>
+`;

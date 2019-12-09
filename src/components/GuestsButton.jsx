@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledGuestsButton = styled.button`
+export const StyledGuestsButton = styled.button`
   font-size: 100%;
   text-align: left;
   line-height: normal;
