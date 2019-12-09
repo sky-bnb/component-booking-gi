@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import GuestsButton from './GuestsButton.jsx';
 import GuestsDropdown from './GuestsDropdown.jsx';
 
-const StyledGuests = styled.div`
+export const StyledGuests = styled.div`
   margin-bottom: 16px;
   position: relative;
 `;

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Guests Component matches the snapshot 1`] = `
+<Guests__StyledGuests>
+  <Guests__StyledGuestsLabel>
+    Guests
+  </Guests__StyledGuestsLabel>
+  <GuestsButton />
+</Guests__StyledGuests>
+`;
